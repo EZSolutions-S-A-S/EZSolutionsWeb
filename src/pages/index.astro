@@ -1,0 +1,161 @@
+---
+const brand = "EZ Solutions S.A.S.";
+const subtitle = "Desarrollo de software a medida · Apps · Web · Sistemas";
+---
+
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{brand}</title>
+    <meta name="description" content={subtitle} />
+    <style>
+      :root{
+        --primary:#004080; /* Azul del logo aprox */
+        --bg:#f6f8fc;
+        --card:#ffffff;
+        --text:#0f172a;
+        --muted:#475569;
+        --border:#e2e8f0;
+        --radius:18px;
+      }
+      *{box-sizing:border-box}
+      body{
+        margin:0;
+        font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial;
+        color:var(--text);
+        background:
+          radial-gradient(900px 500px at 20% 0%, rgba(0,64,128,.12), transparent 55%),
+          radial-gradient(900px 500px at 80% 10%, rgba(0,64,128,.08), transparent 60%),
+          var(--bg);
+      }
+      .container{max-width:980px;margin:0 auto;padding:0 18px}
+      .nav{
+        position:sticky;top:0;z-index:10;
+        background: rgba(246,248,252,.78);
+        backdrop-filter: blur(10px);
+        border-bottom: 1px solid var(--border);
+      }
+      .nav-inner{
+        display:flex;align-items:center;justify-content:space-between;
+        padding:14px 0; gap:12px;
+      }
+      .logo{
+        display:flex;align-items:center;gap:10px;
+        text-decoration:none;
+      }
+      .mark{
+        width:40px;height:40px;border-radius:14px;
+        background: linear-gradient(135deg, var(--primary), #0b5aa8);
+        box-shadow: 0 14px 30px rgba(0,64,128,.20);
+      }
+      .links{display:flex;gap:10px;flex-wrap:wrap;justify-content:flex-end}
+      .link{
+        text-decoration:none;
+        padding:8px 12px;border-radius:14px;
+        border:1px solid var(--border);
+        background: rgba(255,255,255,.65);
+        color: var(--muted);
+      }
+      .link:hover{border-color: rgba(0,64,128,.25); color: var(--text)}
+      .hero{padding:48px 0 20px}
+      h1{margin: 16px 0 10px; font-size: 46px; letter-spacing: -0.02em;}
+      p{margin:0; color: var(--muted); line-height: 1.65; font-size: 18px;}
+      .pill{
+        display:inline-flex;align-items:center;gap:8px;
+        padding:8px 12px;border-radius:999px;
+        border:1px solid var(--border);
+        background: rgba(255,255,255,.75);
+        color: var(--muted);
+        font-size: 13px;
+      }
+      .btn{
+        display:inline-flex; align-items:center; gap:10px;
+        padding:12px 14px; border-radius: 16px;
+        border:1px solid var(--border);
+        background: white;
+        text-decoration:none;
+        color: var(--text);
+        box-shadow: 0 10px 24px rgba(2,6,23,.06);
+        transition: transform .15s ease, border-color .15s ease;
+      }
+      .btn:hover{transform: translateY(-1px); border-color: rgba(0,64,128,.28)}
+      .btn.primary{
+        background: linear-gradient(180deg, rgba(0,64,128,.10), rgba(255,255,255,1));
+        border-color: rgba(0,64,128,.25);
+      }
+      .grid{display:grid;gap:14px;margin-top:22px}
+      @media (min-width: 900px){ .grid{grid-template-columns: repeat(3,1fr);} }
+      .card{
+        background: var(--card);
+        border:1px solid var(--border);
+        border-radius: var(--radius);
+        padding:18px;
+        box-shadow: 0 18px 40px rgba(2,6,23,.06);
+      }
+      .card h3{margin:0 0 8px; font-size: 18px;}
+      .card p{font-size: 15px;}
+      footer{
+        margin-top: 28px;
+        border-top: 1px solid var(--border);
+        padding: 18px 0;
+        color: var(--muted);
+      }
+    </style>
+  </head>
+
+  <body>
+    <header class="nav">
+      <div class="container nav-inner">
+        <a class="logo" href="/">
+          <span class="mark"></span>
+          <strong>{brand}</strong>
+        </a>
+        <nav class="links">
+          <a class="link" href="#servicios">Servicios</a>
+          <a class="link" href="#contacto">Contacto</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container">
+      <section class="hero">
+        <span class="pill">🔷 Página demo en Astro</span>
+        <h1>{brand}</h1>
+        <p>{subtitle}</p>
+
+        <div style="display:flex; gap:10px; flex-wrap:wrap; margin-top:16px;">
+          <a class="btn primary" href="#contacto">Solicitar propuesta</a>
+          <a class="btn" href="#servicios">Ver servicios</a>
+        </div>
+
+        <div id="servicios" class="grid">
+          <div class="card">
+            <h3>Desarrollo Web</h3>
+            <p>Sitios corporativos, landing pages y dashboards ligeros y rápidos.</p>
+          </div>
+          <div class="card">
+            <h3>Apps móviles</h3>
+            <p>Aplicaciones para Android/iOS enfocadas en UX y performance.</p>
+          </div>
+          <div class="card">
+            <h3>Sistemas internos</h3>
+            <p>Automatización, integraciones y APIs para mejorar procesos.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="contacto" class="card" style="margin-top:16px;">
+        <h3 style="margin:0 0 8px 0;">Contacto</h3>
+        <p style="margin:0;">Aquí va tu WhatsApp y correo cuando estés listo.</p>
+      </section>
+
+      <footer>
+        <div class="container" style="padding:0;">
+          <small>© {new Date().getFullYear()} EZ Solutions S.A.S.</small>
+        </div>
+      </footer>
+    </main>
+  </body>
+</html>
