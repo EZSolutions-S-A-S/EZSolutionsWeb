@@ -1,0 +1,103 @@
+.company-culture {
+  padding: 40px 0;
+  background: #fcf8f8;
+}
+
+.company-culture .container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.culture-badge {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 20px;
+  padding: 8px 18px;
+  background: #eaf1fb;
+  color: #005daa;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+.culture-title {
+  text-align: center;
+  font-size: 48px;
+  font-weight: 800;
+  margin-bottom: 20px;
+  color: #0f172a;
+}
+
+.culture-title span {
+  color: #005daa;
+}
+
+.culture-description {
+  max-width: 700px;
+  margin: 0 auto 80px;
+  text-align: center;
+  font-size: 20px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.culture-values {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 60px;
+  justify-items: center;
+}
+
+.culture-card {
+  text-align: center;
+  max-width: 300px;
+}
+
+.culture-icon {
+  position: relative;
+  width: 160px;
+  height: 160px;
+  margin: 0 auto 24px;
+}
+
+.hexagon-bg {
+  width: 100%;
+  height: 100%;
+  transition: filter 0.4s ease;
+}
+
+.culture-icon .icon {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 64px;
+  transform: translate(-50%, -50%);
+  transition: filter 0.4s ease;
+}
+
+.culture-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 12px;
+  color: #0f172a;
+}
+
+.culture-card p {
+  font-size: 17px;
+  color: #64748b;
+  line-height: 1.6;
+}
+
+.culture-card:hover .icon {
+  filter: brightness(0) invert(1);
+}
+
+.culture-card:hover .hexagon-bg {
+  filter: brightness(0) saturate(100%) invert(21%) sepia(97%) saturate(2765%) hue-rotate(203deg);
+}
+
+.hex-1c {
+  top: 2550px;
+  bottom: 100px;
+  right: -100px;
+  width: 200px;
+}

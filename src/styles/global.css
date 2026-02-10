@@ -1,0 +1,31 @@
+@import "./header.css";
+@import "./hero.css";
+@import "./about.css";
+@import "./company-culture.css";
+
+:root {
+  --blue: #1e73be;
+  --blue-dark: #0d5aa7;
+  --text: #1f2937;
+  --gray: #6b7280;
+  --white: #ffffff;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Open Sans', sans-serif;
+  color: var(--text);
+  background: #fff;
+}
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: auto;
+}
+
