@@ -1,0 +1,158 @@
+.hero {
+  padding: 100px 0;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-decoration {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+.hex {
+  position: absolute;
+}
+
+.hex-1 {
+  top: 80px;
+  left: 680px;
+  width: 42px;
+}
+
+.hex-2 {
+  top: 20px;
+  left: 620px;
+  width: 42px;
+}
+
+.hex-3 {
+  top: 410px;
+  bottom: 100px;
+  right: 20px;
+  width: 150px;
+}
+
+.hex-4 {
+  top: 360px;
+  left: 940px;
+  width: 42px;
+}
+
+.hex-5{
+  top: 95px;
+  left: -150px;
+  width: 160px;
+}
+
+.hero-grid {
+  display: grid;
+  grid-template-columns: 2.2fr 0.6fr;
+  gap: 60px;
+  align-items: center;
+  position: relative;
+  z-index: 2;
+}
+
+.badge {
+  display: inline-block;
+  background: #eaf2fb;
+  color: var(--blue);
+  padding: 8px 16px;
+  border-radius: 999px;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.hero h1 {
+  font-size: 64px;
+  line-height: 1.2;
+  font-weight: 700;
+  margin-bottom: 20px;
+  position: relative;
+}
+
+.hero h1::after {
+  content: "";
+  display: block;
+  width: 600px;
+  height: 4px;
+  margin-top: 16px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, #cfe3f7, transparent);
+}
+
+.hero h1 span {
+  color: var(--blue);
+}
+
+.hero p {
+  color: var(--gray);
+  font-size: 30px;
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-primary {
+  background: var(--blue);
+  color: var(--white);
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.btn-outline {
+  border: 1px solid #64748b;
+  padding: 12px 22px;
+  border-radius: 8px;
+  text-decoration: none;
+  color: var(--text);
+  font-weight: 600;
+}
+
+.btn-primary,
+.btn-outline {
+  transition: 
+    transform 0.15s ease,
+    box-shadow 0.15s ease,
+    background-color 0.2s ease;
+}
+
+.btn-primary:hover,
+.btn-outline:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(0, 93, 170, 0.25);
+}
+
+.btn-primary:active,
+.btn-outline:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(0, 93, 170, 0.2);
+}
+
+.stats {
+  padding: 10px 0;
+}
+
+.stats-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  text-align: center;
+}
+
+.stat strong {
+  font-size: 32px;
+  color: var(--blue);
+}
+
+.stat span {
+  display: block;
+  margin-top: 8px;
+  color: var(--gray);
+}
