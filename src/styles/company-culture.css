@@ -62,7 +62,15 @@
 .hexagon-bg {
   width: 100%;
   height: 100%;
-  transition: filter 0.4s ease;
+  transition: all 0.4s ease;
+}
+
+.hexagon-bg path {
+  transition: fill-opacity 0.4s ease;
+}
+
+.culture-card:hover .hexagon-bg path {
+  fill-opacity: 1 !important;
 }
 
 .culture-icon .icon {
@@ -89,10 +97,6 @@
 
 .culture-card:hover .icon {
   filter: brightness(0) invert(1);
-}
-
-.culture-card:hover .hexagon-bg {
-  filter: brightness(0) saturate(100%) invert(21%) sepia(97%) saturate(2765%) hue-rotate(203deg);
 }
 
 .hex-1c {
