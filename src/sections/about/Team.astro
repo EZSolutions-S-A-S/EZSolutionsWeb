@@ -1,0 +1,50 @@
+---
+import TeamCard from "./components/team_card.astro";
+
+const teamMembers = [
+  {
+    image: "src/sections/about/img/juan.png",
+    name: "Juan Andrés",
+    role: "CEO & Fundador",
+    description:
+      "Líder estratégico con visión empresarial y enfoque en innovación tecnológica.",
+    linkedin: "https://linkedin.com",
+    github: "https://github.com/JPosda48",
+  },
+  {
+    image: "src/sections/about/img/andres.png",
+    name: "Andrés Felipe",
+    role: "CTO & Fundador",
+    description:
+      "Arquitecto de software especializado en soluciones escalables y seguras.",
+    linkedin: "https://www.linkedin.com/in/aftr03/",
+    github: "https://github.com/AFTR05",
+  },
+  {
+    image: "src/sections/about/img/valen.png",
+    name: "Valentina",
+    role: "UX/UI Designer & Developer",
+    description:
+      "Diseñadora y desarrolladora apasionada por crear experiencias digitales intuitivas y accesibles.",
+    linkedin: "https://www.linkedin.com/in/valenhoyos28",
+    github: "https://github.com/valenhoyosescobar04",
+  },
+];
+---
+
+<section class="team">
+  <span class="team-badge">Nuestro Equipo</span>
+
+  <h2 class="team-title">
+    El Talento Detrás de la <span>Innovación</span>
+  </h2>
+
+  <p class="team-subtitle">
+    Un equipo multidisciplinario de profesionales apasionados por la tecnología
+    y comprometidos con el éxito de nuestros clientes.
+  </p>
+
+  <div class="team-grid">
+    {teamMembers.map((member) => <TeamCard {...member} />)}
+  </div>
+</section>

@@ -1,0 +1,38 @@
+.team {
+  padding: 4rem 2rem;
+  text-align: center;
+  background: rgb(11, 94, 215, 0.02);
+}
+
+.team-badge {
+  background: #e6f0fb;
+  color: #005DAA;
+  padding: 0.4rem 1rem;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 0.9rem;
+}
+
+.team-title {
+  margin-top: 1.5rem;
+  font-size: 2.6rem;
+  font-weight: 800;
+}
+
+.team-title span {
+  color: #005DAA;
+}
+
+.team-subtitle {
+  max-width: 720px;
+  margin: 1rem auto 3rem;
+  color: #6b7280;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
+  gap: 20px;
+  justify-content: center;
+  width: 100%;
+}

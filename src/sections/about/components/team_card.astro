@@ -1,0 +1,357 @@
+---
+interface Props {
+  image: string;
+  name: string;
+  role: string;
+  description: string;
+  linkedin: string;
+  github: string;
+}
+
+const { image, name, role, description, linkedin, github } = Astro.props;
+---
+
+<article class="team-card" data-team-card>
+  <img src={image} alt={name} />
+
+  <div class="team-info" data-team-info>
+    <h3>{name}</h3>
+    <span>{role}</span>
+  </div>
+
+  <div class="team-overlay" data-team-overlay>
+    <p>{description}</p>
+
+    <div class="team-links">
+      <a href={linkedin} target="_blank" rel="noopener noreferrer">
+        <img src="src/assets/icons/linkedin.svg" alt="LinkedIn" />
+      </a>
+      <a href={github} target="_blank" rel="noopener noreferrer">
+        <img src="src/assets/icons/github.svg" alt="GitHub" />
+      </a>
+    </div>
+  </div>
+</article>
+
+<style>
+  .team-card {
+    position: relative;
+    overflow: hidden;
+    aspect-ratio: 9 / 13;
+    max-height: 400px;
+    border-radius: 20px;
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+    transition: transform 0.3s ease;
+  }
+
+  .team-card:hover {
+    transform: translateY(-8px);
+  }
+
+  .team-card img {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  .team-info {
+    position: absolute;
+    text-align: left;
+    bottom: 12px;
+    left: 12px;
+    right: 12px;
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    z-index: 3;
+    color: #fff;
+    transition: all 0.4s ease;
+    transform: translateY(0);
+    opacity: 1;
+  }
+
+  @media (min-width: 640px) {
+    .team-info {
+      bottom: 16px;
+      left: 16px;
+      right: 16px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .team-info {
+      bottom: 20px;
+      left: 20px;
+      right: 20px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .team-info {
+      bottom: 24px;
+      left: 24px;
+      right: 24px;
+    }
+  }
+
+  .team-info h3 {
+    margin: 0;
+    font-size: 14px;
+    font-weight: 700;
+    line-height: 1.1;
+  }
+
+  .team-info span {
+    font-size: 11px;
+    opacity: 0.85;
+  }
+
+  @media (min-width: 640px) {
+    .team-info h3 {
+      font-size: 15px;
+    }
+
+    .team-info span {
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .team-info h3 {
+      font-size: 17px;
+    }
+
+    .team-info span {
+      font-size: 13px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .team-info h3 {
+      font-size: 18px;
+    }
+
+    .team-info span {
+      font-size: 14px;
+    }
+  }
+
+  .team-info-overlay {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    gap: 3px;
+    color: #fff;
+    margin-bottom: 12px;
+    animation: slideUpTitle 0.4s ease forwards;
+    opacity: 0;
+  }
+
+  .team-card:hover .team-info-overlay {
+    animation: slideUpTitle 0.4s ease forwards;
+    opacity: 1;
+  }
+
+  @keyframes slideUpTitle {
+    from {
+      opacity: 0;
+      transform: translateY(20px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .team-info-overlay h3 {
+    margin: 0;
+    font-size: 15px;
+    font-weight: 700;
+    line-height: 1;
+  }
+
+  .team-info-overlay span {
+    font-size: 11px;
+    opacity: 0.85;
+    line-height: 1;
+  }
+
+  @media (min-width: 768px) {
+    .team-info-overlay {
+      margin-bottom: 14px;
+    }
+
+    .team-info-overlay h3 {
+      font-size: 16px;
+    }
+
+    .team-info-overlay span {
+      font-size: 12px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .team-info-overlay {
+      margin-bottom: 14px;
+    }
+
+    .team-info-overlay h3 {
+      font-size: 17px;
+    }
+
+    .team-info-overlay span {
+      font-size: 13px;
+    }
+  }
+
+  .team-overlay {
+    position: absolute;
+    text-align: left;
+    inset: 0;
+    background: rgba(11, 94, 215, 0.85);
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    padding: 14px;
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    overflow: hidden;
+    justify-content: flex-end;
+  }
+
+  .team-card:hover .team-overlay {
+    opacity: 1;
+  }
+
+  @media (min-width: 640px) {
+    .team-overlay {
+      padding: 16px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .team-overlay {
+      padding: 22px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .team-overlay {
+      padding: 26px;
+    }
+  }
+
+  .team-content {
+    display: none;
+  }
+
+  .team-overlay p {
+    color: #fff;
+    font-size: 11px;
+    line-height: 1.3;
+    margin: 0 0 8px 0;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+  }
+
+  @media (min-width: 640px) {
+    .team-overlay p {
+      font-size: 12px;
+      margin: 0 0 10px 0;
+      -webkit-line-clamp: 4;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .team-overlay p {
+      font-size: 13px;
+      margin: 0 0 12px 0;
+      -webkit-line-clamp: 5;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .team-overlay p {
+      font-size: 13px;
+      margin: 0 0 12px 0;
+      -webkit-line-clamp: 5;
+    }
+  }
+
+  .team-links {
+    display: flex;
+    gap: 0.75rem;
+    flex-wrap: wrap;
+  }
+
+  .team-links img {
+    width: 18px;
+    height: 18px;
+    filter: brightness(0) invert(1);
+    transition: transform 0.2s ease;
+  }
+
+  @media (min-width: 640px) {
+    .team-links img {
+      width: 20px;
+      height: 20px;
+    }
+  }
+
+  @media (min-width: 768px) {
+    .team-links img {
+      width: 22px;
+      height: 22px;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .team-links img {
+      width: 24px;
+      height: 24px;
+    }
+  }
+
+  .team-links a:hover img {
+    transform: scale(1.1);
+  }
+</style>
+
+<script is:inline>
+  function initTeamCards() {
+    const cards = document.querySelectorAll("[data-team-card]");
+
+    cards.forEach((card) => {
+      const teamInfo = card.querySelector("[data-team-info]");
+      const teamOverlay = card.querySelector("[data-team-overlay]");
+      const descriptionP = teamOverlay?.querySelector("p");
+      const teamLinks = teamOverlay?.querySelector(".team-links");
+
+      if (!teamInfo || !teamOverlay) return;
+
+      card.addEventListener("mouseenter", () => {
+        const descHeight = descriptionP ? descriptionP.scrollHeight : 0;
+        const linksHeight = teamLinks ? teamLinks.scrollHeight : 0;
+        const contentHeight = descHeight + linksHeight + 10;
+        const overlayStyles = window.getComputedStyle(teamOverlay);
+        const paddingBottom = parseInt(overlayStyles.paddingBottom);
+        const translateDistance = contentHeight + paddingBottom - 10;
+        teamInfo.style.transform = `translateY(-${translateDistance}px)`;
+      });
+
+      card.addEventListener("mouseleave", () => {
+        teamInfo.style.transform = "translateY(0)";
+      });
+    });
+  }
+
+  if (document.readyState === "loading") {
+    document.addEventListener("DOMContentLoaded", initTeamCards);
+  } else {
+    initTeamCards();
+  }
+</script>

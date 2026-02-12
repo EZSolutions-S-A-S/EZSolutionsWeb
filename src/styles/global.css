@@ -2,6 +2,7 @@
 @import "./hero.css";
 @import "./about.css";
 @import "./company-culture.css";
+@import "./team.css";
 
 :root {
   --blue: #1e73be;
@@ -21,6 +22,7 @@ body {
   font-family: 'Open Sans', sans-serif;
   color: var(--text);
   background: #fff;
+  overflow-x: hidden;
 }
 
 .container {
@@ -28,4 +30,3 @@ body {
   max-width: 1200px;
   margin: auto;
 }
-
