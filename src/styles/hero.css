@@ -29,7 +29,6 @@
 
 .hex-3 {
   top: 410px;
-  bottom: 100px;
   right: 20px;
   width: 150px;
 }
@@ -40,7 +39,7 @@
   width: 42px;
 }
 
-.hex-5{
+.hex-5 {
   top: 95px;
   left: -150px;
   width: 160px;
@@ -155,4 +154,140 @@
   display: block;
   margin-top: 8px;
   color: var(--gray);
+}
+
+/*Responsive */
+
+/* Large Tablet */
+@media (max-width: 1200px) {
+
+  .hero-grid {
+    grid-template-columns: 1.5fr 0.5fr;
+    gap: 40px;
+  }
+
+  .hero h1 {
+    font-size: 52px;
+  }
+
+  .hero p {
+    font-size: 22px;
+  }
+
+  .hero h1::after {
+    width: 100%;
+  }
+
+}
+
+/* Responsive*/
+/* Tablet */
+@media (max-width: 992px) {
+
+  .hero {
+    padding: 80px 0;
+  }
+
+  .hero-grid {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+
+  .hero-content {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+
+  .hero-buttons {
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+
+  .hero h1 {
+    font-size: 42px;
+  }
+
+  .hero p {
+    font-size: 20px;
+  }
+
+  .hex-3,
+  .hex-4,
+  .hex-5 {
+    display: none;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+
+  .hero {
+    padding-top: 100px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+    line-height: 1.3;
+  }
+
+  .hero p {
+    font-size: 18px;
+  }
+
+  .badge {
+    font-size: 12px;
+    padding: 6px 14px;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: 12px;
+    width: 100%;
+  }
+
+  .btn-primary,
+  .btn-outline {
+    width: 100%;
+    text-align: center;
+  }
+
+  .hero h1::after {
+    height: 3px;
+  }
+
+ .hero-decoration {
+    display: block;
+  }
+
+  .hex {
+    position: absolute;
+  }
+
+  .hex-1 {
+    top: 20px;
+    left: 10px;
+    width: 35px;
+  }
+
+  .hex-2 {
+    top: 90px;
+    right: 15px;
+    left: auto;
+    width: 35px;
+  }
+
+  .stats {
+    padding: 10px 0;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .stat strong {
+    font-size: 28px;
+  }
+
 }
