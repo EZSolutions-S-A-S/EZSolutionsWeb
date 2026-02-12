@@ -1,3 +1,37 @@
+---
+import TeamCard from "./components/team_card.astro";
+
+const teamMembers = [
+  {
+    image: "src/sections/about/img/juan.png",
+    name: "Juan Andrés",
+    role: "CEO & Fundador",
+    description:
+      "Líder estratégico con visión empresarial y enfoque en innovación tecnológica.",
+    linkedin: "https://linkedin.com",
+    github: "https://github.com/JPosda48",
+  },
+  {
+    image: "src/sections/about/img/andres.png",
+    name: "Andrés Felipe",
+    role: "CTO & Fundador",
+    description:
+      "Arquitecto de software especializado en soluciones escalables y seguras.",
+    linkedin: "https://www.linkedin.com/in/aftr03/",
+    github: "https://github.com/AFTR05",
+  },
+  {
+    image: "src/sections/about/img/valen.png",
+    name: "Valentina",
+    role: "UX/UI Designer & Developer",
+    description:
+      "Diseñadora y desarrolladora apasionada por crear experiencias digitales intuitivas y accesibles.",
+    linkedin: "https://www.linkedin.com/in/valenhoyos28",
+    github: "https://github.com/valenhoyosescobar04",
+  },
+];
+---
+
 <section class="team">
   <span class="team-badge">Nuestro Equipo</span>
 
@@ -6,87 +40,12 @@
   </h2>
 
   <p class="team-subtitle">
-    Un equipo multidisciplinario de profesionales apasionados por la tecnología y
-    comprometidos con el éxito de nuestros clientes.
+    Un equipo multidisciplinario de profesionales apasionados por la tecnología
+    y comprometidos con el éxito de nuestros clientes.
   </p>
 
   <div class="team-grid">
-    <!-- CARD -->
- <article class="team-card">
-      <img src="src/sections/about/img/juan.png" alt="Juan Andrés" />
-
-      <!-- INFO BASE (siempre visible) -->
-      <div class="team-info">
-        <h3>Juan Andrés</h3>
-        <span>CEO & Fundador</span>
-      </div>
-
-      <!-- OVERLAY (solo hover) -->
-      <div class="team-overlay">
-        <p>
-          Líder estratégico con visión empresarial y enfoque en innovación
-          tecnológica.
-        </p>
-
-        <div class="team-links">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="src/assets/icons/linkedin.svg" alt="LinkedIn" />
-          </a>
-          <a href="https://github.com" target="_blank" rel="noopener noreferrer">
-            <img src="src/assets/icons/github.svg" alt="GitHub" />
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="team-card">
-      <img src="src/sections/about/img/andres.png" alt="Andrés Felipe" />
-
-      <div class="team-info">
-        <h3>Andrés Felipe</h3>
-        <span>CTO & Fundador</span>
-      </div>
-
-      <div class="team-overlay">
-        <p>
-          Arquitecto de software especializado en soluciones escalables y seguras.
-        </p>
-
-        <div class="team-links">
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src="src/assets/icons/linkedin.svg" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src="src/assets/icons/github.svg" />
-          </a>
-        </div>
-      </div>
-    </article>
-
-    <article class="team-card">
-      <img src="src/sections/about/img/valen.png" alt="Valentina" />
-
-      <div class="team-info">
-        <h3>Valentina</h3>
-        <span>UX/UI Designer & Developer</span>
-      </div>
-
-      <div class="team-overlay">
-        <p>
-          Diseñadora y desarrolladora apasionada por crear experiencias digitales
-          intuitivas y accesibles.
-        </p>
-
-        <div class="team-links">
-          <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer">
-            <img src="src/assets/icons/linkedin.svg" />
-          </a>
-          <a href="#" target="_blank" rel="noopener noreferrer">
-            <img src="src/assets/icons/github.svg" />
-          </a>
-        </div>
-      </div>
-    </article>
+    {teamMembers.map((member) => <TeamCard {...member} />)}
   </div>
 
       <div class="team-decoration">
