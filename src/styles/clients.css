@@ -1,0 +1,145 @@
+
+.clients-section {
+  position: relative;
+  padding: 60px 0;
+  background: linear-gradient(to bottom, rgba(0, 93, 170, 0.01), rgba(0, 93, 170, 0.05));
+  overflow: hidden;
+}
+
+.clients-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  position: relative;
+  z-index: 2;
+}
+
+.clients-shape {
+  position: absolute;
+  right: 20px;
+  top: -10px;
+  width: 260px;
+  z-index: 1;
+}
+
+.clients-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.clients-badge {
+  display: block;
+  width: fit-content;
+  margin: 0 auto 20px;
+  padding: 8px 18px;
+  background: #eaf1fb;
+  color: #005daa;
+  font-weight: 600;
+  border-radius: 999px;
+}
+
+.clients-title {
+  text-align: center;
+  font-size: 44px;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+.clients-title span {
+  color: #005DAA;
+}
+
+.clients-subtitle {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  text-align: center;
+  color: #6b7280;
+  font-size: 18px;
+}
+
+.clients-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+.client-card {
+  background: #ffffff;
+  padding: 2.5rem 2rem;
+  border-radius: 16px;
+  text-align: center;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.06);
+  transition: all 0.4s ease;
+  border: 1px solid #adb0b6;
+}
+
+.client-card:hover {
+  transform: translateY(-8px);
+  border: 1px solid #005DAA;
+  box-shadow: 0 10px 25px rgba(59, 130, 246, 0.25);
+}
+
+.client-icon {
+ width: 80px;
+  height: 80px;
+  margin: 0 auto 1.5rem;
+  background: rgb(0, 93, 170, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.client-card:hover .client-icon {
+  background: rgb(0, 93, 170, 0.30);;
+}
+
+.client-icon img {
+  width: 38px;
+  height: 38px;
+}
+
+.client-card h3 {
+  font-size: 1.2rem;
+  font-weight: 700;
+  margin-bottom: 0.3rem;
+  color: #111827;
+}
+
+.client-card p {
+  color: #6b7280;
+  font-size: 0.95rem;
+}
+
+/* Responsive */
+
+/* Tablet */
+@media (max-width: 1024px) {
+  .clients-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .clients-title {
+    font-size: 2.2rem;
+  }
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+  .clients-section {
+    padding: 4rem 1.5rem;
+  }
+
+  .clients-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .clients-title {
+    font-size: 1.9rem;
+  }
+
+  .clients-shape {
+    width: 170px;
+    right: -110px;
+  }
+}

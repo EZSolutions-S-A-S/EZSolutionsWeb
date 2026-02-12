@@ -1,4 +1,5 @@
 .company-culture {
+  position: relative;
   padding: 40px 0;
   background: rgb(0, 93, 170, 0.05);
 }
@@ -70,7 +71,7 @@
 }
 
 .culture-card:hover .hexagon-bg path {
-  fill-opacity: 1 !important;
+  fill-opacity: 1;
 }
 
 .culture-icon .icon {
@@ -100,8 +101,84 @@
 }
 
 .hex-1c {
-  top: 2550px;
+  top: 160px;
   bottom: 100px;
   right: -100px;
   width: 200px;
+}
+
+/* Responsive/
+
+/* Tablet */
+@media (max-width: 1024px) {
+
+  .culture-title {
+    font-size: 40px;
+  }
+
+  .culture-description {
+    font-size: 18px;
+    margin-bottom: 60px;
+  }
+
+  .culture-values {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+
+  .culture-icon {
+    width: 140px;
+    height: 140px;
+  }
+
+}
+
+/* Mobile */
+@media (max-width: 640px) {
+
+  .company-culture {
+    padding: 60px 20px;
+  }
+
+  .culture-title {
+    font-size: 28px;
+  }
+
+  .culture-description {
+    font-size: 16px;
+    margin-bottom: 40px;
+  }
+
+  .culture-values {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .culture-card {
+    max-width: 100%;
+  }
+
+  .culture-icon {
+    width: 110px;
+    height: 110px;
+  }
+
+  .culture-icon .icon {
+    width: 48px;
+  }
+
+  .culture-card h3 {
+    font-size: 20px;
+  }
+
+  .culture-card p {
+    font-size: 15px;
+  }
+
+  .hex-1c {
+    width: 100px;
+    top: 200px;
+    right: -50px;
+  }
+
 }
