@@ -4,6 +4,7 @@
 @import "./company-culture.css";
 @import "./team.css";
 @import "./clients.css";
+@import "./services.css";
 
 :root {
   --blue: #1e73be;
