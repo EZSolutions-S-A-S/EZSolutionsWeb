@@ -56,45 +56,19 @@
 
 .marquee {
   display: flex;
-  gap: 40px;
+  gap: 0;
   flex-wrap: nowrap;
-}
-
-.marquee--left,
-.marquee--right {
-  animation: none;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
 }
 
 .marquee__group {
   display: flex;
+  align-items: center;
   gap: 40px;
   flex-shrink: 0;
-}
-
-.marquee--left {
-  animation: scroll-left 30s linear infinite;
-}
-
-.marquee--right {
-  animation: scroll-right 30s linear infinite;
-}
-
-@keyframes scroll-left {
-  from {
-    transform: translateX(0);
-  }
-  to {
-    transform: translateX(-100%);
-  }
-}
-
-@keyframes scroll-right {
-  from {
-    transform: translateX(-100%);
-  }
-  to {
-    transform: translateX(0);
-  }
+  padding-right: 40px;
+  will-change: transform;
 }
 
 .tech-footer {
@@ -130,6 +104,8 @@
 .tech-card:hover {
   transform: translateY(-8px);
   background: rgba(255,255,255,0.2);
+  z-index: 10;
+  position: relative;
 }
 
 @keyframes scroll {
@@ -158,3 +134,4 @@
     height: 130px;
   }
 }
+

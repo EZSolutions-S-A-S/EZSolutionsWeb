@@ -1,33 +1,28 @@
 document.addEventListener("DOMContentLoaded", () => {
-
   const marquees = document.querySelectorAll(".marquee");
 
   marquees.forEach((marquee, index) => {
+    const groups = marquee.querySelectorAll(".marquee__group");
+    if (groups.length < 2) return;
+    const groupWidth = groups[0].offsetWidth;
+    const isLeftMarquee = index === 0;
+    const speed = 0.5;
 
     let position = 0;
-    const speed = index === 0 ? 0.5 : -0.5;
-
-    marquee.innerHTML += marquee.innerHTML;
-
-    const contentWidth = marquee.scrollWidth / 2;
 
     function animate() {
       position += speed;
-
-      if (speed < 0 && Math.abs(position) >= contentWidth) {
+      if (position >= groupWidth) {
         position = 0;
       }
-
-      if (speed > 0 && position >= contentWidth) {
-        position = 0;
-      }
-
-      marquee.style.transform = `translateX(${position}px)`;
+      let offset = isLeftMarquee ? -position : -groupWidth + position;
+      groups.forEach(group => {
+        group.style.transform = `translateX(${offset}px)`;
+      });
 
       requestAnimationFrame(animate);
     }
 
     animate();
   });
-
 });
