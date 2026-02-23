@@ -1,0 +1,98 @@
+<div id="quote-overlay" class="quote-overlay">
+  <div class="quote-modal" role="dialog" aria-modal="true">
+    
+    <div class="quote-modal-header">
+
+      <div class="quote-modal-title">
+        <h2>Cotizar Proyecto</h2>
+        <p class="quote-subtitle">
+          Cuéntanos sobre tu proyecto y te contactaremos pronto.
+        </p>
+      </div>
+
+      <button id="quote-close-btn" class="quote-close-btn" aria-label="Cerrar modal">
+        ✕
+      </button>
+
+    </div>
+
+    <div class="quote-modal-body">
+        <div id="form-alert" class="form-alert">
+  <div class="form-alert-content">
+    <span class="form-alert-icon">⚠</span>
+    <span id="form-alert-text"></span>
+  </div>
+</div>
+
+      <form id="quote-form" class="quote-form" novalidate>
+
+        <div class="quote-form-grid">
+
+          <div class="quote-form-group">
+            <label>
+                Nombre completo <span class="quote-required">*</span>
+            </label>
+            <input type="text" placeholder="Tu nombre" required />
+          </div>
+
+          <div class="quote-form-group">
+            <label>
+                Correo electrónico <span class="quote-required">*</span>
+            </label>
+            <input type="email" placeholder="tu@email.com" required />
+          </div>
+
+          <div class="quote-form-group">
+            <label>
+                Empresa <span class="quote-optional">(opcional)</span>
+            </label>
+            <input type="text" placeholder="Nombre de tu empresa" />
+          </div>
+
+          <div class="quote-form-group">
+            <label>
+                Tipo de proyecto <span class="quote-required">*</span>
+            </label>
+            <select required>
+              <option value="" disabled selected>Selecciona una opción</option>
+              <option>Software a la medida</option>
+              <option>Sistema de inventario</option>
+              <option>Sistema de ventas</option>
+              <option>Aplicación web</option>
+              <option>Aplicación móvil</option>
+              <option>Otro</option>
+            </select>
+          </div>
+
+        </div>
+
+    <!--<img src="src/components/header/modal/icons_modal/arrow-down.svg" alt="" class="quote-select-icon" /> -->
+
+        <div class="quote-form-group quote-full">
+          <label>
+            Descripción del proyecto <span class="quote-required">*</span>
+          </label>
+          <textarea
+            rows="5"
+            placeholder="Cuéntanos sobre tu proyecto, objetivos y necesidades"
+            required></textarea>
+        </div>
+
+        <div class="quote-form-group quote-full">
+          <label>
+            Presupuesto estimado <span class="quote-optional">(opcional)</span>
+        </label>
+          <input type="text" placeholder="Ej: $1.500.000 - $3.000.000 COP" />
+        </div>
+
+        <button type="submit" class="quote-submit-btn">
+          Enviar Solicitud
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script src="./quote-modal.js"></script>

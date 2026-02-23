@@ -51,3 +51,16 @@
 .btn-quote:hover {
   background: #1f66ad;
 }
+
+.btn-quote {
+  background-color: #005DAA;
+  border: 1px solid #005DAA;
+  border-radius: 12px;
+  transition: all 0.3s ease;
+}
+
+.btn-quote:hover {
+  border: 1px solid #005DAA;
+  box-shadow: 0 20px 30px rgba(0, 93, 170, 0.15);
+  transform: translateY(-1px);
+}

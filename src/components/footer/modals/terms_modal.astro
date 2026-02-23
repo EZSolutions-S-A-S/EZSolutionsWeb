@@ -1,0 +1,140 @@
+<div id="terms-overlay" class="privacy-overlay">
+  <div class="privacy-modal" role="dialog" aria-modal="true">
+ 
+    <div class="privacy-modal-header">
+      <div class="privacy-modal-title">
+        <img src="src/assets/icons/logo-small.svg" alt="Terms logo small" class="privacy-logo-small" />
+        <h2>Términos de Servicio</h2>
+      </div>
+
+      <button id="terms-close-btn" class="privacy-close-btn" aria-label="Close modal">
+        <img src="src/components/footer/icons_footer/close-icon.svg" alt="Close" />
+      </button>
+    </div>
+
+    <div class="privacy-modal-body">
+
+      <section class="privacy-section">
+        <h3>1. Aceptación de los Términos</h3>
+        <p>
+          Al acceder y utilizar el sitio web de EZSolutions S.A.S, usted acepta cumplir con estos Términos de Servicio. Si no está de acuerdo con alguna parte de estos términos, le recomendamos no utilizar nuestro sitio web ni nuestros servicios.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h3>2. Descripción de Servicios</h3>
+        <p>EZSolutions S.A.S ofrece servicios de desarrollo de software a la medida, incluyendo pero no limitado a:</p>
+        <ul>
+          <li>Desarrollo de software personalizado</li>
+          <li>Sistemas de gestión de inventario</li>
+          <li>Sistemas de punto de venta</li>
+          <li>Aplicaciones web y móviles</li>
+          <li>Automatización de procesos empresariales</li>
+          <li>Consultoría tecnológica</li>
+        </ul>
+      </section>
+
+      <section class="privacy-section">
+        <h3>3. Uso del Sitio Web</h3>
+        <p>
+          Usted se compromete a utilizar este sitio web únicamente para fines legales y de manera que no infrinja los derechos de terceros ni restrinja o inhiba el uso del sitio por parte de otros usuarios.
+        </p>
+        <p>Queda prohibido:</p>
+        <ul>
+          <li>Usar el sitio para actividades ilegales o no autorizadas</li>
+          <li>Intentar acceder a áreas restringidas del sitio</li>
+          <li>Transmitir virus u otros códigos maliciosos</li>
+          <li>Recopilar información de usuarios sin autorización</li>
+        </ul>
+      </section>
+
+      <section class="privacy-section">
+        <h3>4. Propiedad Intelectual</h3>
+        <p>
+          Todo el contenido de este sitio web, incluyendo textos, gráficos, logos, imágenes, y software, es propiedad de EZSolutions S.A.S o sus licenciantes y está protegido por las leyes de propiedad intelectual de Colombia y tratados internacionales.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h3>5. Contratos de Servicio</h3>
+        <p>
+          Los servicios específicos de desarrollo de software estarán sujetos a contratos individuales que establecerán los términos particulares, incluyendo alcance, plazos, costos y condiciones de entrega. Estos contratos prevalecerán sobre estos términos generales en caso de conflicto.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h3>6. Limitación de Responsabilidad</h3>
+        <p>
+          EZSolutions S.A.S no será responsable por daños indirectos, incidentales, especiales o consecuentes que resulten del uso o la imposibilidad de usar nuestros servicios. Nuestra responsabilidad total no excederá el monto pagado por los servicios en cuestión.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h3>7. Garantías</h3>
+        <p>
+          Proporcionamos garantía de calidad en nuestros desarrollos según lo especificado en cada contrato individual. El período y alcance de la garantía se determinará en el acuerdo de servicio correspondiente.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h3>8. Ley Aplicable</h3>
+        <p>
+          Estos términos se regirán e interpretarán de acuerdo con las leyes de la República de Colombia. Cualquier disputa será sometida a la jurisdicción de los tribunales competentes de Colombia.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h3>9. Modificaciones</h3>
+        <p>
+          EZSolutions S.A.S se reserva el derecho de modificar estos términos en cualquier momento. Las modificaciones entrarán en vigor inmediatamente después de su publicación en el sitio web. El uso continuado del sitio después de dichas modificaciones constituye su aceptación de los nuevos términos.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h3>10. Contacto</h3>
+        <p>
+          Para cualquier pregunta sobre estos Términos de Servicio, puede contactarnos a través de nuestro formulario de contacto o enviando un correo electrónico a legal@ezsolutions.com
+        </p>
+
+        <p class="privacy-update">
+          Última actualización: 19 de febrero de 2026<br/>
+          Ubicación: Quindío, Colombia
+        </p>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const termsOverlay = document.getElementById("terms-overlay");
+  const termsClose = document.getElementById("terms-close-btn");
+  const termsLink = document.getElementById("terms-link");
+
+  if (termsOverlay && termsLink) {
+    termsLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      termsOverlay.classList.add("active");
+    });
+  }
+
+  if (termsOverlay && termsClose) {
+    termsClose.addEventListener("click", () => {
+      termsOverlay.classList.remove("active");
+    });
+  }
+
+  if (termsOverlay) {
+    termsOverlay.addEventListener("click", (e) => {
+      if (e.target === termsOverlay) {
+        termsOverlay.classList.remove("active");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        termsOverlay.classList.remove("active");
+      }
+    });
+  }
+</script>
