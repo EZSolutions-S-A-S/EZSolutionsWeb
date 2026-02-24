@@ -9,53 +9,29 @@ document.addEventListener("DOMContentLoaded", () => {
 
   if (!quoteOverlay || !form) return;
 
-  // Custom Select Logic
-  const customSelect = document.querySelector('.custom-select');
-  const customSelectTrigger = customSelect?.querySelector('.custom-select__trigger');
-  const customOptions = customSelect?.querySelector('.custom-options');
-  const customOptionsList = customSelect?.querySelectorAll('.custom-option');
-  const hiddenSelect = document.getElementById('project-type-select');
-  const triggerText = customSelectTrigger?.querySelector('span');
-
-  if (customSelect && customSelectTrigger && customOptions && hiddenSelect) {
-    customSelectTrigger.addEventListener('click', (e) => {
-        customSelect.classList.toggle('open');
-    });
-
-    customOptionsList.forEach(option => {
-        option.addEventListener('click', function() {
-            customSelect.classList.remove('open');
-            
-            customOptionsList.forEach(opt => opt.classList.remove('selected'));
-            this.classList.add('selected');
-            
-            triggerText.textContent = this.textContent;
-            triggerText.style.color = "#111827";
-
-            hiddenSelect.value = this.getAttribute('data-value');
-            
-            const event = new Event('change');
-            hiddenSelect.dispatchEvent(event);
-        });
-    });
-
-    document.addEventListener('click', (e) => {
-        if (!customSelect.contains(e.target)) {
-            customSelect.classList.remove('open');
-        }
-    });
-  }
+  // Custom Select Logic is now handled inside the CustomSelect.astro component
 
   function resetForm() {
     form.reset();
     
-    if (triggerText) {
-      triggerText.textContent = "Selecciona una opción";
-      triggerText.style.color = "#61758A";
-    }
-    if (customOptionsList) {
-      customOptionsList.forEach(opt => opt.classList.remove('selected'));
-    }
+    // Reset custom selects if they exist
+    const customTriggers = form.querySelectorAll('.custom-select__trigger span');
+    const customOptions = form.querySelectorAll('.custom-option');
+
+    // Reset trigger text
+    customTriggers.forEach(span => {
+      // Find the placeholder from the first disabled option of the adjacent select
+      const wrapper = span.closest('.custom-select-wrapper');
+      const select = wrapper ? wrapper.querySelector('select') : null;
+      // Use placeholder text if available, fallback to default text
+      const placeholder = select && select.options[0] ? select.options[0].text : "Selecciona una opción";
+      
+      span.textContent = placeholder;
+      span.style.color = "#61758A";
+    });
+
+    // Remove selected class
+    customOptions.forEach(opt => opt.classList.remove('selected'));
 
     form.querySelectorAll(".field-error").forEach(el => {
       el.classList.remove("field-error");

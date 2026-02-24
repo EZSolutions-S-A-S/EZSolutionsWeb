@@ -1,3 +1,6 @@
+---
+import CustomSelect from '../../inputs/dropdown_select.astro';
+---
 <div id="quote-overlay" class="quote-overlay">
   <div class="quote-modal" role="dialog" aria-modal="true">
     
@@ -53,31 +56,19 @@
             <label>
               Tipo de proyecto <span class="quote-required">*</span>
             </label>
-            <div class="custom-select-wrapper">
-              <div class="custom-select">
-                <div class="custom-select__trigger">
-                  <span>Selecciona una opción</span>
-                  <div class="arrow"></div>
-                </div>
-                <div class="custom-options">
-                  <span class="custom-option selected" data-value="Software a la medida">Software a la medida</span>
-                  <span class="custom-option" data-value="Sistema de inventario">Sistema de inventario</span>
-                  <span class="custom-option" data-value="Sistema de ventas">Sistema de ventas</span>
-                  <span class="custom-option" data-value="Aplicación web">Aplicación web</span>
-                  <span class="custom-option" data-value="Aplicación móvil">Aplicación móvil</span>
-                  <span class="custom-option" data-value="Otro">Otro</span>
-                </div>
-              </div>
-              <select required id="project-type-select" name="project_type" style="display: none;">
-                <option value="" disabled selected>Selecciona una opción</option>
-                <option value="Software a la medida">Software a la medida</option>
-                <option value="Sistema de inventario">Sistema de inventario</option>
-                <option value="Sistema de ventas">Sistema de ventas</option>
-                <option value="Aplicación web">Aplicación web</option>
-                <option value="Aplicación móvil">Aplicación móvil</option>
-                <option value="Otro">Otro</option>
-              </select>
-            </div>
+            <CustomSelect 
+              id="project-type-select" 
+              name="project_type" 
+              required={true}
+              options={[
+                "Software a la medida",
+                "Sistema de inventario",
+                "Sistema de ventas",
+                "Aplicación web",
+                "Aplicación móvil",
+                "Otro"
+              ]}
+            />
           </div>
 
         </div>
