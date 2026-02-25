@@ -29,7 +29,7 @@
   overflow-y: auto;
   position: relative;
   animation: modalFade 0.25s ease-out;
-   z-index: 9999;
+  z-index: 9999;
 }
 
 @keyframes modalFade {
