@@ -1,8 +1,13 @@
 .team {
   position: relative;
-  padding: 60px 0;
+  padding: 60px 20px;
   text-align: center;
   background: rgb(11, 94, 215, 0.02);
+}
+
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
 }
 
 .team-badge {
@@ -39,20 +44,18 @@
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
-  gap: 20px;
-  justify-content: center;
-  width: 100%;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
+  justify-content: center;
 }
 
-/* CARD */
 .team-card {
   position: relative;
   overflow: hidden;
   height: 471px;
-  width: 345px;
+  width: 100%;
+  max-width: 345px;
+  margin: 0 auto;
   border-radius: 12px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
@@ -65,7 +68,7 @@
   object-fit: cover;
 }
 
-/* INFO BASE */
+
 .team-info {
   position: absolute;
   text-align: left;

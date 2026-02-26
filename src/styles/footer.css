@@ -121,6 +121,19 @@
 
 @media (max-width: 768px) {
 
+  .footer-container {
+    gap: 10px;
+  }
+
+  .footer-left,
+  .footer-right {
+    gap: 15px;
+  }
+
+  .footer-column {
+    margin-bottom: 10px;
+  }
+
   .footer-bottom-container {
     flex-direction: column;
     gap: 12px;
