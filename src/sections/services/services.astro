@@ -1,5 +1,11 @@
 ---
 import HexagonBg from '../about/culture/hexagon_bg.astro';
+import codeIcon from './icons_services/code.svg';
+import inventoryIcon from './icons_services/inventory.svg';
+import salesIcon from './icons_services/sales.svg';
+import appIcon from './icons_services/app.svg';
+import automationIcon from './icons_services/automation.svg';
+import hexagonIcon from '../../assets/icons/hexagon.svg';
 ---
 
 <section class="services">
@@ -20,7 +26,7 @@ import HexagonBg from '../about/culture/hexagon_bg.astro';
       <article class="service-card">
         <div class="service-icon">
           <HexagonBg />
-          <img src="src/sections/services/icons_services/code.svg" class="main-icon" alt="Software">
+          <img src={codeIcon.src} class="main-icon" alt="Software">
         </div>
         <h3>Software a la Medida</h3>
         <p>
@@ -32,7 +38,7 @@ import HexagonBg from '../about/culture/hexagon_bg.astro';
       <article class="service-card">
         <div class="service-icon">
           <HexagonBg />
-          <img src="src/sections/services/icons_services/inventory.svg" class="main-icon" alt="Inventario">
+          <img src={inventoryIcon.src} class="main-icon" alt="Inventario">
         </div>
         <h3>Sistemas de Inventario</h3>
         <p>
@@ -44,7 +50,7 @@ import HexagonBg from '../about/culture/hexagon_bg.astro';
       <article class="service-card">
         <div class="service-icon">
           <HexagonBg />
-          <img src="src/sections/services/icons_services/sales.svg" class="main-icon" alt="Ventas">
+          <img src={salesIcon.src} class="main-icon" alt="Ventas">
         </div>
         <h3>Sistemas de Ventas</h3>
         <p>
@@ -56,7 +62,7 @@ import HexagonBg from '../about/culture/hexagon_bg.astro';
       <article class="service-card">
         <div class="service-icon">
           <HexagonBg />
-          <img src="src/sections/services/icons_services/app.svg" class="main-icon" alt="Apps">
+          <img src={appIcon.src} class="main-icon" alt="Apps">
         </div>
         <h3>Apps Web y Móviles</h3>
         <p>
@@ -68,7 +74,7 @@ import HexagonBg from '../about/culture/hexagon_bg.astro';
       <article class="service-card">
         <div class="service-icon">
           <HexagonBg />
-          <img src="src/sections/services/icons_services/automation.svg" class="main-icon" alt="Automatización">
+          <img src={automationIcon.src} class="main-icon" alt="Automatización">
         </div>
         <h3>Automatización</h3>
         <p>
@@ -79,6 +85,6 @@ import HexagonBg from '../about/culture/hexagon_bg.astro';
 
     </div>
     <div class="services-decoration">
-  <img src="src/assets/icons/hexagon.svg" class="hex hex-1s" alt="" />
+  <img src={hexagonIcon.src} class="hex hex-1s" alt="" />
   </div>
 </section>
