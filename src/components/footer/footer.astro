@@ -1,3 +1,11 @@
+---
+import facebookIcon from '@/components/footer/icons_footer/facebook.svg';
+import instagramIcon from '@/components/footer/icons_footer/instagram.svg';
+import linkedinIcon from '@/assets/icons/linkedin.svg';
+import tiktokIcon from '@/components/footer/icons_footer/tiktok.svg';
+import logoWhite from '@/assets/icons/logo-ezsolutions-white.svg';
+---
+
 <footer class="site-footer">
   <div class="footer-container">
 
@@ -5,7 +13,7 @@
 
       <div class="footer-brand">
         <img 
-          src="/src/assets/icons/logo-ezsolutions-white.svg" 
+          src={logoWhite.src}
           alt="EZSolutions Logo" 
           class="footer-logo"
         />
@@ -15,16 +23,16 @@
 
         <div class="social-icons">
           <a href="https://facebook.com" target="_blank" rel="noopener noreferrer">
-            <img src="/src/components/footer/icons_footer/facebook.svg" alt="Facebook" />
+            <img src={facebookIcon.src} alt="Facebook" />
           </a>
           <a href="https://instagram.com" target="_blank" rel="noopener noreferrer">
-            <img src="/src/components/footer/icons_footer/instagram.svg" alt="Instagram" />
+            <img src={instagramIcon.src} alt="Instagram" />
           </a>
           <a href="https://www.linkedin.com/company/ezsolutionssas/" target="_blank" rel="noopener noreferrer">
-            <img src="/src/assets/icons/linkedin.svg" alt="LinkedIn" />
+            <img src={linkedinIcon.src} alt="LinkedIn" />
           </a>
           <a href="https://tiktok.com" target="_blank" rel="noopener noreferrer">
-            <img src="/src/components/footer/icons_footer/tiktok.svg" alt="TikTok" />
+            <img src={tiktokIcon.src} alt="TikTok" />
           </a>
         </div>
       </div>

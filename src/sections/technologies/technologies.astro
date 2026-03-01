@@ -1,22 +1,33 @@
 
 ---
+import hexagonIcon from '@/sections/technologies/icons_technologies/hexagon_white.svg';
+import javaIcon from '@/sections/technologies/icons_technologies/java.svg';
+import jsIcon from '@/sections/technologies/icons_technologies/javascript.svg';
+import springIcon from '@/sections/technologies/icons_technologies/spring.svg';
+import djangoIcon from '@/sections/technologies/icons_technologies/django.svg';
+import gitIcon from '@/sections/technologies/icons_technologies/git.svg';
+import flutterIcon from '@/sections/technologies/icons_technologies/flutter.svg';
+import dockerIcon from '@/sections/technologies/icons_technologies/docker.svg';
+import firebaseIcon from '@/sections/technologies/icons_technologies/firebase.svg';
+import pythonIcon from '@/sections/technologies/icons_technologies/python.svg';
+
 const technologies = [
-  { name: "Java", icon: "/src/sections/technologies/icons_technologies/java.svg" },
-  { name: "JavaScript", icon: "/src/sections/technologies/icons_technologies/javascript.svg" },
-  { name: "Spring Boot", icon: "/src/sections/technologies/icons_technologies/spring.svg" },
-  { name: "Django", icon: "/src/sections/technologies/icons_technologies/django.svg" },
-  { name: "Git", icon: "/src/sections/technologies/icons_technologies/git.svg" },
-  { name: "Flutter", icon: "/src/sections/technologies/icons_technologies/flutter.svg" },
-  { name: "Docker", icon: "/src/sections/technologies/icons_technologies/docker.svg" },
-  { name: "Firebase", icon: "/src/sections/technologies/icons_technologies/firebase.svg" },
-  { name: "Python", icon: "/src/sections/technologies/icons_technologies/python.svg" },
+  { name: "Java", icon: javaIcon.src },
+  { name: "JavaScript", icon: jsIcon.src },
+  { name: "Spring Boot", icon: springIcon.src },
+  { name: "Django", icon: djangoIcon.src },
+  { name: "Git", icon: gitIcon.src },
+  { name: "Flutter", icon: flutterIcon.src },
+  { name: "Docker", icon: dockerIcon.src },
+  { name: "Firebase", icon: firebaseIcon.src },
+  { name: "Python", icon: pythonIcon.src },
 ];
 ---
 
 <section class="technologies">
 
-  <img src="/src/sections/technologies/icons_technologies/hexagon_white.svg" class="hex hex-top-left" alt="" />
-  <img src="/src/sections/technologies/icons_technologies/hexagon_white.svg" class="hex hex-bottom-right" alt="" />
+  <img src={hexagonIcon.src} class="hex hex-top-left" alt="" />
+  <img src={hexagonIcon.src} class="hex hex-bottom-right" alt="" />
 
   <div class="container">
 
