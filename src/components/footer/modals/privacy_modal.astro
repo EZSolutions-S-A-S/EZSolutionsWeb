@@ -1,15 +1,19 @@
+---
+import logoSmall from '../../../assets/icons/logo-small.svg';
+import closeIcon from '../icons_footer/close-icon.svg';
+---
 
 <div id="privacy-overlay" class="privacy-overlay">
   <div class="privacy-modal" role="dialog" aria-modal="true">
     
     <div class="privacy-modal-header">
       <div class="privacy-modal-title">
-        <img src="/src/assets/icons/logo-small.svg" alt="Privacy logo small" class="privacy-logo-small" />
+        <img src={logoSmall.src} alt="Privacy logo small" class="privacy-logo-small" />
         <h2 data-i18n-key="privacy.title">Política de Privacidad</h2>
       </div>
 
       <button id="privacy-close-btn" class="privacy-close-btn" aria-label="Close modal">
-        <img src="/src/components/footer/icons_footer/close-icon.svg" alt="Close" />
+        <img src={closeIcon.src} alt="Close" />
       </button>
     </div>
 

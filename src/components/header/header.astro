@@ -1,5 +1,7 @@
 ---
 import { t } from '../../i18n/i18n.config';
+import menuIcon from '../../assets/icons/menu-burger.svg';
+import logoIcon from '../../assets/icons/logo-ezsolutions.svg';
 
 // Detectar idioma de la URL (query param)
 const lang = (new URL(Astro.request.url).searchParams.get('lang') || 'es') as 'es' | 'en';
@@ -8,11 +10,11 @@ const lang = (new URL(Astro.request.url).searchParams.get('lang') || 'es') as 'e
 <header class="header" data-lang={lang}>
   <div class="container header-content">
     <button class="menu-toggle" id="menuToggle">
-      <img src="/src/assets/icons/menu-burger.svg" alt="Menú" />
+      <img src={menuIcon.src} alt="Menú" />
     </button>
 
     <img
-      src="/src/assets/icons/logo-ezsolutions.svg"
+      src={logoIcon.src}
       alt="EZ Solutions"
       class="logo"
     />
