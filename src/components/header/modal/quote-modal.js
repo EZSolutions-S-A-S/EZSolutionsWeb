@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const quoteOverlay = document.getElementById("quote-overlay");
   const quoteCloseBtn = document.getElementById("quote-close-btn");
-  const openQuoteBtn = document.getElementById("openQuoteModal");
+  const openQuoteBtns = document.querySelectorAll(".open-quote-modal, #openQuoteModal");
   const form = document.getElementById("quote-form");
   const formAlert = document.getElementById("form-alert");
   const formAlertText = document.getElementById("form-alert-text");
@@ -30,6 +30,8 @@ document.addEventListener("DOMContentLoaded", () => {
       span.style.color = "#61758A";
     });
 
+    form.closest('.quote-modal').scrollTo(0, 0);
+
     // Remove selected class
     customOptions.forEach(opt => opt.classList.remove('selected'));
 
@@ -46,10 +48,12 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   }
 
-  if (openQuoteBtn) {
-    openQuoteBtn.addEventListener("click", (e) => {
-      e.preventDefault();
-      quoteOverlay.classList.add("active");
+  if (openQuoteBtns.length > 0) {
+    openQuoteBtns.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        quoteOverlay.classList.add("active");
+      });
     });
   }
 
