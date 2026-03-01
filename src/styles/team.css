@@ -1,51 +1,61 @@
 .team {
   position: relative;
-  padding: 4rem 2rem;
+  padding: 60px 20px;
   text-align: center;
   background: rgb(11, 94, 215, 0.02);
 }
 
+.team-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
 .team-badge {
-  background: #e6f0fb;
-  color: #005DAA;
-  padding: 0.4rem 1rem;
-  border-radius: 999px;
+  display: block;
+  width: fit-content;
+  margin: 0 auto 20px;
+  padding: 8px 18px;
+  background: #eaf1fb;
+  color: #005daa;
   font-weight: 600;
-  font-size: 0.9rem;
+  border-radius: 999px;
 }
 
 .team-title {
-  margin-top: 1.5rem;
-  font-size: 2.6rem;
+  text-align: center;
+  font-size: 48px;
   font-weight: 800;
+  margin-bottom: 20px;
+  color: #0f172a;
 }
 
 .team-title span {
   color: #005DAA;
 }
 
-.team-subtitle {
-  max-width: 720px;
-  margin: 1rem auto 3rem;
-  color: #6b7280;
+.team-description {
+  max-width: 700px;
+  margin: 0 auto 80px;
+  text-align: center;
+  font-size: 20px;
+  color: #64748b;
+  line-height: 1.6;
 }
 
 .team-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
-  gap: 20px;
-  justify-content: center;
-  width: 100%;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 2rem;
+  justify-content: center;
 }
 
-/* CARD */
 .team-card {
   position: relative;
   overflow: hidden;
   height: 471px;
-  width: 345px;
+  width: 100%;
+  max-width: 345px;
+  margin: 0 auto;
   border-radius: 12px;
   box-shadow: 0 15px 35px rgba(0,0,0,0.12);
 }
@@ -58,7 +68,7 @@
   object-fit: cover;
 }
 
-/* INFO BASE */
+
 .team-info {
   position: absolute;
   text-align: left;
@@ -190,7 +200,7 @@ team-decoration {
     font-size: 1.8rem;
   }
 
-  .team-subtitle {
+  .team-description {
     font-size: 0.95rem;
     margin-bottom: 2rem;
   }

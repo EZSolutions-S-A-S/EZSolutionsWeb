@@ -1,0 +1,137 @@
+.technologies {
+  position: relative;
+  padding: 100px 20px;
+  background: linear-gradient(to bottom, rgb(0, 93, 170, 0.8), rgb(0, 37, 68, 0.8));
+  overflow: hidden;
+  text-align: center;
+}
+
+.hex-top-left {
+  top: 5px;
+  left: 70px;
+}
+
+.hex-bottom-right {
+  bottom: 40px;
+  right: 40px;
+}
+
+.tech-badge {
+  display: inline-block;
+  background: rgb(231, 241, 255, 0.4);
+  color: #ffffff;
+  padding: 8px 18px;
+  border-radius: 999px;
+  font-weight: 600;
+  font-size: 14px;
+  margin-bottom: 20px;
+}
+
+.tech-title {
+  font-size: 48px;
+  font-weight: 700;
+  margin-bottom: 20px;
+  color: #ffffff;
+}
+
+.tech-description {
+  max-width: 700px;
+  margin: 0 auto 60px;
+  opacity: 0.85;
+  font-size: 20px;
+  color: #CAD5E1;
+}
+
+.wrapper {
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+
+  margin-top: 0px;
+  margin-left: -80px;
+  margin-right: -80px;
+  padding: 20px 0;
+}
+
+.marquee {
+  display: flex;
+  gap: 0;
+  flex-wrap: nowrap;
+  padding-bottom: 20px;
+  margin-bottom: -20px;
+}
+
+.marquee__group {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  flex-shrink: 0;
+  padding-right: 40px;
+  will-change: transform;
+}
+
+.tech-footer {
+  margin-top: 60px;
+  opacity: 0.8;
+  font-size: 16px;
+  color: #CAD5E1;
+}
+
+.tech-card {
+  min-width: 160px;
+  height: 160px;
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: 0.4s ease;
+}
+
+.tech-card img {
+  width: 50px;
+  margin-bottom: 15px;
+}
+
+.tech-card span {
+  font-weight: 600;
+  color: #ffffff;
+}
+
+.tech-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.2);
+  z-index: 10;
+  position: relative;
+}
+
+@keyframes scroll {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-50%); }
+}
+
+.wrapper--vertical .marquee {
+  flex-direction: column;
+  animation: scroll-vertical 25s linear infinite;
+}
+
+@keyframes scroll-vertical {
+  0% { transform: translateY(0); }
+  100% { transform: translateY(-50%); }
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .tech-title {
+    font-size: 32px;
+  }
+
+  .tech-card {
+    min-width: 130px;
+    height: 130px;
+  }
+}
+

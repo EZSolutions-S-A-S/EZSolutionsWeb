@@ -1,5 +1,8 @@
 <header class="header">
   <div class="container header-content">
+    <button class="menu-toggle" id="menuToggle">
+      <img src="/src/assets/icons/menu-burger.svg" alt="Menú" />
+    </button>
 
     <img
       src="/src/assets/icons/logo-ezsolutions.svg"
@@ -13,12 +16,11 @@
       <a href="#servicios" data-section="servicios">Servicios</a>
       <a href="#tecnologias" data-section="tecnologias">Tecnologías</a>
       <a href="#contacto" data-section="contacto">Contacto</a>
+      
+      <button class="btn-quote mobile-only open-quote-modal"> Cotizar Proyecto </button>
     </nav>
 
-    <a href="#contacto" class="btn-quote">
-      Cotizar Proyecto
-    </a>
-
+    <button id="openQuoteModal" class="btn-quote desktop-only"> Cotizar Proyecto </button>
   </div>
 </header>
 
@@ -26,25 +28,55 @@
   document.addEventListener("DOMContentLoaded", () => {
     const sections = document.querySelectorAll("section[id]");
     const navLinks = document.querySelectorAll(".nav a");
+    const nav = document.querySelector(".nav");
+    const menuToggle = document.getElementById("menuToggle");
 
     function onScroll() {
       let currentSection = "inicio";
 
-      sections.forEach(section => {
+      sections.forEach((section) => {
         const sectionTop = section.offsetTop - 140;
         if (window.scrollY >= sectionTop) {
           currentSection = section.id;
         }
       });
 
-      navLinks.forEach(link => {
+      navLinks.forEach((link) => {
         link.classList.remove("active");
         if (link.dataset.section === currentSection) {
           link.classList.add("active");
         }
       });
+
+      if (nav.classList.contains("open")) {
+        nav.classList.remove("open");
+      }
     }
 
     window.addEventListener("scroll", onScroll);
+
+    if (menuToggle && nav) {
+      menuToggle.addEventListener("click", () => {
+        nav.classList.toggle("open");
+      });
+    }
+
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if (nav.classList.contains("open")) {
+          nav.classList.remove("open");
+        }
+      });
+    });
+
+    document.addEventListener("click", (e) => {
+      if (
+        nav.classList.contains("open") &&
+        !nav.contains(e.target) &&
+        !menuToggle.contains(e.target)
+      ) {
+        nav.classList.remove("open");
+      }
+    });
   });
 </script>

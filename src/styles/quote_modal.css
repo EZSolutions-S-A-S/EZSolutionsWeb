@@ -1,0 +1,262 @@
+.quote-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(15, 23, 42, 0.45);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 40px 20px;
+  overflow-y: visible;
+}
+
+.quote-overlay.active {
+  display: flex;
+}
+
+.quote-modal {
+  background: #ffffff;
+  width: 100%;
+  max-width: 860px;
+  border-radius: 12px;
+  padding: 30px 56px 56px 56px;
+  box-shadow:
+    0 40px 80px rgba(0, 0, 0, 0.18),
+    0 2px 8px rgba(0, 0, 0, 0.05);
+  max-height: 95vh;
+  overflow-y: auto;
+  position: relative;
+  animation: modalFade 0.25s ease-out;
+  z-index: 9999;
+}
+
+@keyframes modalFade {
+  from {
+    opacity: 0;
+    transform: scale(0.97);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.quote-close-btn {
+  position: absolute;
+  top: 28px;
+  right: 28px;
+  background: transparent;
+  border: none;
+  font-size: 26px;
+  cursor: pointer;
+  color: #94a3b8;
+  transition: color 0.2s ease;
+}
+
+.quote-close-btn:hover {
+  color: #005DAA;
+}
+
+.quote-modal-title h2 {
+  margin-top: 0px;
+  font-size: 36px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.quote-subtitle {
+  font-size: 20px;
+  color: #61758A;
+  margin-bottom: 30px;
+}
+
+.quote-form-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 32px;
+  margin-bottom: 24px;
+}
+
+.quote-form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+.quote-full {
+  grid-column: span 2;
+  margin-bottom: 24px;
+}
+
+.quote-form-group label {
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  color: #111827;
+}
+
+.quote-required {
+  color: #2563eb;
+  margin-left: 4px;
+}
+
+.quote-optional {
+  font-weight: 600;
+  color: #94a3b8;
+}
+
+input,
+select,
+textarea {
+  padding: 14px 16px;
+  border: 1.5px solid #d1d5db;
+  border-radius: 12px;
+  font-size: 15px;
+  outline: none;
+  transition: all 0.2s ease;
+  font-family: "Inter", sans-serif;
+  background: #ffffff;
+  color: #61758A;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  border-color: #005DAA;
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.15);
+}
+
+textarea {
+  resize: vertical;
+  min-height: 120px;
+}
+
+.quote-form__submit {
+  width: 100%;
+  padding: 16px;
+  background: #005DAA;
+  color: #ffffff;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+.quote-form__submit:hover {
+  background: #003f7f;
+}
+
+/* Icono */
+/*.quote-select-icon {
+  position: absolute;
+  right: 16px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 18px;
+  pointer-events: none;
+}*/
+
+.quote-submit-btn {
+  width: 100%;
+  padding: 18px;
+  background: #005DAA;
+  color: #ffffff;
+  border: none;
+  border-radius: 14px;
+  font-size: 17px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  box-shadow: 0 8px 20px rgba(0, 93, 170, 0.35);
+  margin-top: 10px;
+}
+
+.quote-submit-btn:hover {
+  background: #004b8a;
+  transform: translateY(-2px);
+}
+
+.form-alert {
+  display: none;
+  margin-bottom: 24px;
+  padding: 16px 18px;
+  border-radius: 14px;
+  background: #fef2f2;
+  border: 1px solid #fecaca;
+  animation: fadeSlide 0.25s ease;
+}
+
+.form-alert.active {
+  display: block;
+}
+
+.form-alert-content {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  color: #b91c1c;
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.form-alert-icon {
+  font-size: 18px;
+}
+
+/* Error*/
+
+.field-error {
+  border-color: #dc2626 !important;
+  box-shadow: 0 0 0 3px rgba(220, 38, 38, 0.12);
+  animation: shake 0.18s ease-in-out;
+}
+
+.error-message {
+  font-size: 13px;
+  color: #dc2626;
+  margin-top: 6px;
+  font-weight: 500;
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-3px); }
+  50% { transform: translateX(3px); }
+  75% { transform: translateX(-2px); }
+  100% { transform: translateX(0); }
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(-6px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive*/
+
+@media (max-width: 768px) {
+  .quote-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .quote-full {
+    grid-column: span 1;
+  }
+
+  .quote-modal {
+    padding: 32px 24px;
+    border-radius: 16px;
+  }
+}

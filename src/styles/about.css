@@ -17,7 +17,7 @@
 
 .about-title {
   text-align: center;
-  font-size: 44px;
+  font-size: 48px;
   font-weight: 700;
   margin-bottom: 16px;
 }
@@ -31,7 +31,7 @@
   margin: 0 auto 60px;
   text-align: center;
   color: #6b7280;
-  font-size: 18px;
+  font-size: 20px;
 }
 
 .values-title {
@@ -233,7 +233,7 @@
 @media (max-width: 640px) {
 
   .about-section {
-    padding: 60px 0;
+    padding: 75px 0;
   }
 
   .about-title {

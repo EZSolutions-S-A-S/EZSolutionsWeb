@@ -1,0 +1,123 @@
+
+<div id="privacy-overlay" class="privacy-overlay">
+  <div class="privacy-modal" role="dialog" aria-modal="true">
+    
+    <div class="privacy-modal-header">
+      <div class="privacy-modal-title">
+        <img src="/src/assets/icons/logo-small.svg" alt="Privacy logo small" class="privacy-logo-small" />
+        <h2>Política de Privacidad</h2>
+      </div>
+
+      <button id="privacy-close-btn" class="privacy-close-btn" aria-label="Close modal">
+        <img src="/src/components/footer/icons_footer/close-icon.svg" alt="Close" />
+      </button>
+    </div>
+
+    <div class="privacy-modal-body">
+
+      <section class="privacy-section">
+        <h3>1. Información que Recopilamos</h3>
+        <p>
+          En EZSolutions S.A.S, recopilamos información que usted nos proporciona directamente, como cuando completa nuestro formulario de contacto, solicita información sobre nuestros servicios, o se comunica con nosotros por cualquier medio.
+        </p>
+        <p>
+          La información puede incluir: nombre completo, dirección de correo electrónico, número de teléfono, nombre de su empresa y cualquier otro dato que decida proporcionarnos.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h3>2. Uso de la Información</h3>
+        <p>Utilizamos la información recopilada para:</p>
+        <ul>
+          <li>Responder a sus consultas y solicitudes</li>
+          <li>Proporcionar información sobre nuestros servicios</li>
+          <li>Mejorar nuestros servicios y experiencia del usuario</li>
+          <li>Enviar comunicaciones relacionadas con nuestros servicios (con su consentimiento)</li>
+          <li>Cumplir con obligaciones legales</li>
+        </ul>
+      </section>
+
+      <section class="privacy-section">
+        <h3>3. Protección de Datos</h3>
+        <p>
+          Implementamos medidas de seguridad técnicas y organizativas apropiadas para proteger sus datos personales contra el acceso no autorizado, la alteración, divulgación o destrucción. Estas medidas incluyen cifrado de datos, acceso restringido y protocolos de seguridad actualizados.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h3>4. Compartir Información</h3>
+        <p>
+          No vendemos, alquilamos ni compartimos su información personal con terceros, excepto en los siguientes casos:
+        </p>
+        <ul>
+          <li>Con su consentimiento explícito</li>
+          <li>Para cumplir con obligaciones legales</li>
+          <li>Para proteger nuestros derechos legales</li>
+          <li>Con proveedores de servicios que nos ayudan a operar nuestro negocio</li>
+        </ul>
+      </section>
+
+      <section class="privacy-section">
+        <h3>5. Sus Derechos</h3>
+        <p>
+          Usted tiene derecho a acceder, rectificar, eliminar o limitar el uso de sus datos personales. Para ejercer estos derechos, puede contactarnos a través de nuestro formulario de contacto o enviando un correo electrónico a privacy@ezsolutions.com.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h3>6. Cookies</h3>
+        <p>
+          Nuestro sitio web puede utilizar cookies y tecnologías similares para mejorar su experiencia de navegación. Puede configurar su navegador para rechazar cookies, aunque esto puede afectar algunas funcionalidades del sitio.
+        </p>
+      </section>
+
+      <section class="privacy-section">
+        <h3>7. Cambios en esta Política</h3>
+        <p>
+          Nos reservamos el derecho de actualizar esta política de privacidad en cualquier momento. Los cambios serán publicados en esta página con la fecha de última actualización.
+        </p>
+
+        <p class="privacy-update">
+          Última actualización: 19 de febrero de 2026<br/>
+          Ubicación: Quindío, Colombia
+        </p>
+      </section>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  const overlay = document.getElementById("privacy-overlay");
+  const closeButton = document.getElementById("privacy-close-btn");
+  const privacyLink = document.getElementById("privacy-link");
+
+  if (overlay && privacyLink) {
+    privacyLink.addEventListener("click", (e) => {
+      e.preventDefault();
+      overlay.classList.add("active");
+    });
+  }
+
+  if (overlay && closeButton) {
+    closeButton.addEventListener("click", () => {
+      overlay.classList.remove("active");
+    });
+  }
+
+  if (overlay) {
+    overlay.addEventListener("click", (e) => {
+      if (e.target === overlay) {
+        overlay.classList.remove("active");
+      }
+    });
+
+    document.addEventListener("keydown", (e) => {
+      if (e.key === "Escape") {
+        overlay.classList.remove("active");
+      }
+    });
+  }
+</script>
+
+

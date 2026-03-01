@@ -1,6 +1,12 @@
 ---
-import Header from '../components/header/header.astro'
-import Footer from '../components/footer/footer.astro'
+import Header from '../components/header/header.astro';
+import Footer from '../components/footer/footer.astro';
+import PrivacyModal from '../components/footer/modals/privacy_modal.astro';
+import TermsModal from '../components/footer/modals/terms_modal.astro';
+import QuoteModal from '../components/header/modal/quote_modal.astro';
+import '../styles/global.css';
+
+const { title = "EZSolutions", currentPage } = Astro.props;
 ---
 
 <!DOCTYPE html>
@@ -11,16 +17,21 @@ import Footer from '../components/footer/footer.astro'
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <link rel="stylesheet" href="src/styles/global.css" />
+    <title>{title}</title>
   </head>
 
   <body>
-    <Header />
+    <Header currentPage={currentPage} />
+
     <main>
       <slot />
     </main>
+
     <Footer />
+    <PrivacyModal />
+    <TermsModal />
+    <QuoteModal />
   </body>
 </html>

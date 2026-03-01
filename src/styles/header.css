@@ -37,17 +37,142 @@
 }
 
 .btn-quote {
-  background: #2b78c5;
+  background-color: #005DAA;
   color: rgb(255, 255, 255);
   padding: 10px 20px;
-  border-radius: 10px;
+  border: 1px solid #005DAA;
+  border-radius: 12px;
   text-decoration: none;
   font-weight: 600;
   font-size: 14px;
   box-shadow: 0 4px 12px rgba(0, 93, 170, 0.25);
-  transition: background 0.2s ease;
+  transition: all 0.2s ease;
+  cursor: pointer;
 }
 
 .btn-quote:hover {
   background: #1f66ad;
+  border: 1px solid #1f66ad;
+  box-shadow: 0 20px 30px rgba(0, 93, 170, 0.15);
+  transform: translateY(-1px);
+}
+
+.btn-quote:active {
+  transform: scale(0.95);
+  box-shadow: 0 2px 8px rgba(0, 93, 170, 0.2);
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.menu-toggle img {
+  width: 26px;
+  height: 26px;
+  display: block;
+  transition: transform 0.25s ease, opacity 0.2s ease;
+}
+
+.menu-toggle:active img {
+  transform: scale(0.85) rotate(8deg);
+}
+
+.menu-toggle.active img {
+  transform: rotate(90deg);
+}
+
+.mobile-only {
+  display: none;
+}
+
+.desktop-only {
+  display: block;
+}
+
+/* Responsive*/
+
+@media (max-width: 1024px) {
+
+  .header-content {
+    justify-content: space-between;
+    height: 70px;
+    padding: 0 20px;
+  }
+
+  .menu-toggle {
+    display: block;
+    order: 1; /* Toggle a la izquierda */
+  }
+
+  .logo {
+    order: 2; /* Logo a la derecha/centro */
+    margin: 0;
+    margin-left: auto; /* Empujamos al logo a la derecha */
+  }
+
+  /* Ocultar elementos exclusivos de escritorio */
+  .desktop-only {
+    display: none !important;
+  }
+  
+  /* Mostrar elementos exclusivos de móvil */
+  .mobile-only {
+    display: block !important;
+  }
+
+  /* Estilo específico para el botón dentro del nav en móvil */
+  .nav .btn-quote.mobile-only {
+    width: 100%;
+    margin-top: auto; 
+    text-align: center;
+  }
+
+  .nav {
+    position: fixed;
+    top: 70px; /* Ajuste a la altura del header movil */
+    left: -100%;
+    width: 280px;
+    height: calc(100vh - 70px);
+    background: #fffffff6;
+    flex-direction: column;
+    gap: 24px;
+    padding: 40px 24px;
+    transition: left 0.3s ease;
+    z-index: 99;
+    box-shadow: 4px 0 24px rgba(0,0,0,0.05);
+  }
+
+  .nav.open {
+    left: 0;
+  }
+}
+
+@media (min-width: 1025px) {
+  .mobile-only {
+    display: none !important;
+  }
+  
+  .desktop-only {
+    display: block !important;
+  }
+}
+
+@media (max-width: 600px) {
+
+  .header-content {
+    height: 70px;
+  }
+
+  .nav {
+    top: 70px;
+    height: calc(100vh - 70px);
+  }
+
+  .logo {
+    height: 36px;
+  }
 }

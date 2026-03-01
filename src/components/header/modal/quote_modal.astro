@@ -1,0 +1,107 @@
+---
+import CustomSelect from '../../inputs/dropdown_select.astro';
+---
+<div id="quote-overlay" class="quote-overlay">
+  <div class="quote-modal" role="dialog" aria-modal="true">
+    
+    <div class="quote-modal-header">
+
+      <div class="quote-modal-title">
+        <h2>Cotizar Proyecto</h2>
+        <p class="quote-subtitle">
+          Cuéntanos sobre tu proyecto y te contactaremos pronto.
+        </p>
+      </div>
+
+      <button id="quote-close-btn" class="quote-close-btn" aria-label="Cerrar modal">
+        ✕
+      </button>
+
+    </div>
+
+    <div class="quote-modal-body">
+        <div id="form-alert" class="form-alert">
+  <div class="form-alert-content">
+    <span class="form-alert-icon">⚠</span>
+    <span id="form-alert-text"></span>
+  </div>
+</div>
+
+      <form id="quote-form" class="quote-form" novalidate>
+
+        <div class="quote-form-grid">
+
+          <div class="quote-form-group">
+            <label for="quote-name">
+                Nombre completo <span class="quote-required">*</span>
+            </label>
+            <input id="quote-name" name="name" type="text" placeholder="Tu nombre" required />
+          </div>
+
+          <div class="quote-form-group">
+            <label for="quote-email">
+                Correo electrónico <span class="quote-required">*</span>
+            </label>
+            <input id="quote-email" name="email" type="email" placeholder="tu@email.com" required />
+          </div>
+
+          <div class="quote-form-group">
+            <label for="quote-company">
+                Empresa <span class="quote-optional">(opcional)</span>
+            </label>
+            <input id="quote-company" name="company" type="text" placeholder="Nombre de tu empresa" />
+          </div>
+
+          <div class="quote-form-group">
+            <label for="project-type-select">
+              Tipo de proyecto <span class="quote-required">*</span>
+            </label>
+            <CustomSelect 
+              id="project-type-select" 
+              name="project_type" 
+              required={true}
+              options={[
+                "Software a la medida",
+                "Sistema de inventario",
+                "Sistema de ventas",
+                "Aplicación web",
+                "Aplicación móvil",
+                "Otro"
+              ]}
+            />
+          </div>
+
+        </div>
+
+        <div class="quote-form-group quote-full">
+          <label for="quote-description">
+            Descripción del proyecto <span class="quote-required">*</span>
+          </label>
+          <textarea
+            id="quote-description"
+            name="description"
+            rows="5"
+            placeholder="Cuéntanos sobre tu proyecto, objetivos y necesidades"
+            required></textarea>
+        </div>
+
+        <div class="quote-form-group quote-full">
+          <label for="quote-budget">
+            Presupuesto estimado <span class="quote-optional">(opcional)</span>
+        </label>
+          <input id="quote-budget" name="budget" type="text" placeholder="Ej: $1.500.000 - $3.000.000 COP" />
+        </div>
+
+        <button type="submit" class="quote-submit-btn">
+          Enviar Solicitud
+        </button>
+
+      </form>
+
+    </div>
+  </div>
+</div>
+
+<script>
+  import "./quote-modal.js";
+</script>

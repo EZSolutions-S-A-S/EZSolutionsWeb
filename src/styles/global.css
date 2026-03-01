@@ -5,6 +5,11 @@
 @import "./team.css";
 @import "./clients.css";
 @import "./services.css";
+@import "./technologies.css";
+@import "./contact.css";
+@import "./footer.css";
+@import "./privacy-terms-modal.css";
+@import "./quote_modal.css";  
 
 :root {
   --blue: #1e73be;
