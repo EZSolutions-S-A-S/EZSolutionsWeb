@@ -1,0 +1,18 @@
+---
+import { t } from '../i18n/i18n.config.ts';
+
+// Detectar idioma de la URL
+const lang = (new URL(Astro.request.url).searchParams.get('lang') || 'es') as 'es' | 'en';
+---
+
+<!DOCTYPE html>
+<html lang={lang}>
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>EZSolutions</title>
+  </head>
+  <body>
+    <slot />
+  </body>
+</html>

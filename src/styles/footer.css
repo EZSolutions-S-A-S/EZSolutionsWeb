@@ -106,8 +106,36 @@
   padding: 0 20px;
   display: flex;
   justify-content: space-between;
+  align-items: center;
   font-size: 18px;
   color: rgba(255,255,255,0.7);
+}
+
+.footer-lang-selector {
+  display: flex;
+  gap: 8px;
+  align-items: center;
+}
+
+.footer-lang-selector .lang-btn {
+  background: none;
+  border: none;
+  color: rgba(255,255,255,0.7);
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 12px;
+  transition: color 0.2s;
+  cursor: pointer;
+  padding: 0;
+}
+
+.footer-lang-selector .lang-btn:hover,
+.footer-lang-selector .lang-btn.active {
+  color: #ffffff;
+}
+
+.footer-lang-selector span {
+  color: rgba(255,255,255,0.5);
 }
 
 /* Responsive */

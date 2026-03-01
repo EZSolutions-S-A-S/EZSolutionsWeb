@@ -10,7 +10,7 @@
           class="footer-logo"
         />
 
-        <p class="footer-description">
+        <p class="footer-description" data-i18n-key="footer.description">
           Transformamos ideas en soluciones digitales. Software a la medida para impulsar tu negocio.        </p>
 
         <div class="social-icons">
@@ -30,10 +30,10 @@
       </div>
 
       <div class="footer-column">
-        <h4>Empresa</h4>
-        <a href="/#nosotros">Nosotros</a>
-        <a href="/#tecnologias">Tecnologías</a>
-        <a href="/#contacto">Contacto</a>
+        <h4 data-i18n-key="footer.company">Empresa</h4>
+        <a href="/#nosotros" data-i18n-key="footer.about">Nosotros</a>
+        <a href="/#tecnologias" data-i18n-key="footer.technologies">Tecnologías</a>
+        <a href="/#contacto" data-i18n-key="footer.contact">Contacto</a>
       </div>
 
     </div>
@@ -41,17 +41,17 @@
     <div class="footer-right">
 
       <div class="footer-column">
-        <h4>Servicios</h4>
-        <a href="/#servicios">Software a la Medida</a>
-        <a href="/#servicios">Sistemas de Inventario</a>
-        <a href="/#servicios">Sistemas de Ventas</a>
-        <a href="/#servicios">Apps Móviles</a>
+        <h4 data-i18n-key="footer.services">Servicios</h4>
+        <a href="/#servicios" data-i18n-key="footer.custom">Software a la Medida</a>
+        <a href="/#servicios" data-i18n-key="footer.inventory">Sistemas de Inventario</a>
+        <a href="/#servicios" data-i18n-key="footer.sales">Sistemas de Ventas</a>
+        <a href="/#servicios" data-i18n-key="footer.apps">Apps Móviles</a>
       </div>
 
       <div class="footer-column">
-        <h4>Legal</h4>
-        <a href="#" id="privacy-link">Política de Privacidad</a>
-        <a href="#" id="terms-link">Términos de Servicio</a>
+        <h4 data-i18n-key="footer.legal">Legal</h4>
+        <a href="#" id="privacy-link" data-i18n-key="footer.privacy">Política de Privacidad</a>
+        <a href="#" id="terms-link" data-i18n-key="footer.terms">Términos de Servicio</a>
       </div>
 
     </div>
@@ -60,8 +60,23 @@
 
   <div class="footer-bottom">
     <div class="footer-bottom-container">
-      <p>© 2026 EZsolutions S.A.S. Todos los derechos reservados.</p>
-      <p>Quindío, Colombia</p>
+      <div>
+        <p data-i18n-key="footer.copyright">© 2026 EZsolutions S.A.S. Todos los derechos reservados.</p>
+        <p data-i18n-key="footer.location">Quindío, Colombia</p>
+      </div>
+      <div class="footer-lang-selector">
+        <button data-lang-switch="es" class="lang-btn" onclick="switchLanguage('es')">ES</button>
+        <span>|</span>
+        <button data-lang-switch="en" class="lang-btn" onclick="switchLanguage('en')">EN</button>
+      </div>
     </div>
   </div>
 </footer>
+
+<script>
+  import { setLanguage } from '../../i18n/i18n-client';
+  
+  (window as any).switchLanguage = (lang: string) => {
+    setLanguage(lang as 'es' | 'en');
+  };
+</script>

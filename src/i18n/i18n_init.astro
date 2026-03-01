@@ -1,0 +1,21 @@
+---
+// Este componente debe incluirse una sola vez en el layout base
+---
+
+<script>
+  import { setLanguage, getText, subscribe } from './i18n-client';
+  
+  // Inicializar el i18n cuando el DOM esté listo
+  document.addEventListener('DOMContentLoaded', () => {
+    // Obtener el idioma guardado o por defecto
+    const savedLang = (localStorage.getItem('lang') || 'es') as 'es' | 'en';
+    
+    // Establecer el idioma (esto también actualiza la página)
+    setLanguage(savedLang);
+  });
+  
+  // Actualizar el atributo lang del HTML
+  subscribe((lang: 'es' | 'en') => {
+    document.documentElement.lang = lang;
+  });
+</script>

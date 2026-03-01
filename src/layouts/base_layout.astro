@@ -4,6 +4,7 @@ import Footer from '../components/footer/footer.astro';
 import PrivacyModal from '../components/footer/modals/privacy_modal.astro';
 import TermsModal from '../components/footer/modals/terms_modal.astro';
 import QuoteModal from '../components/header/modal/quote_modal.astro';
+import I18nInit from '../i18n/i18n_init.astro'
 import '../styles/global.css';
 
 const { title = "EZSolutions", currentPage } = Astro.props;
@@ -23,6 +24,7 @@ const { title = "EZSolutions", currentPage } = Astro.props;
   </head>
 
   <body>
+    <I18nInit />
     <Header currentPage={currentPage} />
 
     <main>
