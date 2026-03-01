@@ -7,13 +7,13 @@ import CustomSelect from '../../inputs/dropdown_select.astro';
     <div class="quote-modal-header">
 
       <div class="quote-modal-title">
-        <h2>Cotizar Proyecto</h2>
-        <p class="quote-subtitle">
+        <h2 data-i18n-key="quoteForm.title">Cotizar Proyecto</h2>
+        <p class="quote-subtitle" data-i18n-key="quoteForm.subtitle">
           Cuéntanos sobre tu proyecto y te contactaremos pronto.
         </p>
       </div>
 
-      <button id="quote-close-btn" class="quote-close-btn" aria-label="Cerrar modal">
+      <button id="quote-close-btn" class="quote-close-btn" aria-label="Cerrar modal" data-i18n-attr='{"aria-label": "quoteForm.closeBtn"}'>
         ✕
       </button>
 
@@ -33,28 +33,28 @@ import CustomSelect from '../../inputs/dropdown_select.astro';
 
           <div class="quote-form-group">
             <label for="quote-name">
-                Nombre completo <span class="quote-required">*</span>
+                <span data-i18n-key="quoteForm.nameLabel">Nombre completo</span> <span class="quote-required" data-i18n-key="quoteForm.required">*</span>
             </label>
-            <input id="quote-name" name="name" type="text" placeholder="Tu nombre" required />
+            <input id="quote-name" name="name" type="text" placeholder="Tu nombre" data-i18n-attr='{"placeholder": "quoteForm.namePlaceholder"}' required />
           </div>
 
           <div class="quote-form-group">
             <label for="quote-email">
-                Correo electrónico <span class="quote-required">*</span>
+                <span data-i18n-key="quoteForm.emailLabel">Correo electrónico</span> <span class="quote-required" data-i18n-key="quoteForm.required">*</span>
             </label>
-            <input id="quote-email" name="email" type="email" placeholder="tu@email.com" required />
+            <input id="quote-email" name="email" type="email" placeholder="tu@email.com" data-i18n-attr='{"placeholder": "quoteForm.emailPlaceholder"}' required />
           </div>
 
           <div class="quote-form-group">
             <label for="quote-company">
-                Empresa <span class="quote-optional">(opcional)</span>
+                <span data-i18n-key="quoteForm.companyLabel">Empresa</span> <span class="quote-optional" data-i18n-key="quoteForm.optional">(opcional)</span>
             </label>
-            <input id="quote-company" name="company" type="text" placeholder="Nombre de tu empresa" />
+            <input id="quote-company" name="company" type="text" placeholder="Nombre de tu empresa" data-i18n-attr='{"placeholder": "quoteForm.companyPlaceholder"}' />
           </div>
 
           <div class="quote-form-group">
             <label for="project-type-select">
-              Tipo de proyecto <span class="quote-required">*</span>
+              <span data-i18n-key="quoteForm.projectTypeLabel">Tipo de proyecto</span> <span class="quote-required" data-i18n-key="quoteForm.required">*</span>
             </label>
             <CustomSelect 
               id="project-type-select" 
@@ -75,24 +75,25 @@ import CustomSelect from '../../inputs/dropdown_select.astro';
 
         <div class="quote-form-group quote-full">
           <label for="quote-description">
-            Descripción del proyecto <span class="quote-required">*</span>
+            <span data-i18n-key="quoteForm.descriptionLabel">Descripción del proyecto</span> <span class="quote-required" data-i18n-key="quoteForm.required">*</span>
           </label>
           <textarea
             id="quote-description"
             name="description"
             rows="5"
             placeholder="Cuéntanos sobre tu proyecto, objetivos y necesidades"
+            data-i18n-attr='{"placeholder": "quoteForm.descriptionPlaceholder"}'
             required></textarea>
         </div>
 
         <div class="quote-form-group quote-full">
           <label for="quote-budget">
-            Presupuesto estimado <span class="quote-optional">(opcional)</span>
-        </label>
-          <input id="quote-budget" name="budget" type="text" placeholder="Ej: $1.500.000 - $3.000.000 COP" />
+            <span data-i18n-key="quoteForm.budgetLabel">Presupuesto estimado</span> <span class="quote-optional" data-i18n-key="quoteForm.optional">(opcional)</span>
+          </label>
+          <input id="quote-budget" name="budget" type="text" placeholder="Ej: $1.500.000 - $3.000.000 COP" data-i18n-attr='{"placeholder": "quoteForm.budgetPlaceholder"}' />
         </div>
 
-        <button type="submit" class="quote-submit-btn">
+        <button type="submit" class="quote-submit-btn" data-i18n-key="quoteForm.submitBtn">
           Enviar Solicitud
         </button>
 

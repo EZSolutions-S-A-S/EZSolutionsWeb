@@ -1,4 +1,11 @@
-<header class="header">
+---
+import { t } from '../../i18n/i18n.config';
+
+// Detectar idioma de la URL (query param)
+const lang = (new URL(Astro.request.url).searchParams.get('lang') || 'es') as 'es' | 'en';
+---
+
+<header class="header" data-lang={lang}>
   <div class="container header-content">
     <button class="menu-toggle" id="menuToggle">
       <img src="/src/assets/icons/menu-burger.svg" alt="Menú" />
@@ -11,23 +18,29 @@
     />
 
     <nav class="nav">
-      <a href="#inicio" data-section="inicio" class="active">Inicio</a>
-      <a href="#nosotros" data-section="nosotros">Nosotros</a>
-      <a href="#servicios" data-section="servicios">Servicios</a>
-      <a href="#tecnologias" data-section="tecnologias">Tecnologías</a>
-      <a href="#contacto" data-section="contacto">Contacto</a>
+      <a href="#inicio" data-section="inicio" class="active" data-i18n-key="nav.inicio">{t('nav.inicio', lang)}</a>
+      <a href="#nosotros" data-section="nosotros" data-i18n-key="nav.nosotros">{t('nav.nosotros', lang)}</a>
+      <a href="#servicios" data-section="servicios" data-i18n-key="nav.servicios">{t('nav.servicios', lang)}</a>
+      <a href="#tecnologias" data-section="tecnologias" data-i18n-key="nav.tecnologias">{t('nav.tecnologias', lang)}</a>
+      <a href="#contacto" data-section="contacto" data-i18n-key="nav.contacto">{t('nav.contacto', lang)}</a>
       
-      <button class="btn-quote mobile-only open-quote-modal"> Cotizar Proyecto </button>
+      <button class="btn-quote mobile-only open-quote-modal" data-i18n-key="nav.quote">{t('nav.quote', lang)}</button>
     </nav>
 
-    <button id="openQuoteModal" class="btn-quote desktop-only"> Cotizar Proyecto </button>
+    <button id="openQuoteModal" class="btn-quote desktop-only" data-i18n-key="nav.quote">{t('nav.quote', lang)}</button>
   </div>
 </header>
 
-<script is:inline>
+<script>
+  import { setLanguage } from '../../i18n/i18n-client';
+  
+  (window as any).switchLanguage = (lang: string) => {
+    setLanguage(lang as 'es' | 'en');
+  };
+  
   document.addEventListener("DOMContentLoaded", () => {
-    const sections = document.querySelectorAll("section[id]");
-    const navLinks = document.querySelectorAll(".nav a");
+    const sections = document.querySelectorAll("section[id]") as NodeListOf<HTMLElement>;
+    const navLinks = document.querySelectorAll(".nav a[data-section]") as NodeListOf<HTMLAnchorElement>;
     const nav = document.querySelector(".nav");
     const menuToggle = document.getElementById("menuToggle");
 
@@ -48,7 +61,7 @@
         }
       });
 
-      if (nav.classList.contains("open")) {
+      if (nav?.classList.contains("open")) {
         nav.classList.remove("open");
       }
     }
@@ -63,7 +76,7 @@
 
     navLinks.forEach((link) => {
       link.addEventListener("click", () => {
-        if (nav.classList.contains("open")) {
+        if (nav?.classList.contains("open")) {
           nav.classList.remove("open");
         }
       });
@@ -71,12 +84,41 @@
 
     document.addEventListener("click", (e) => {
       if (
-        nav.classList.contains("open") &&
-        !nav.contains(e.target) &&
-        !menuToggle.contains(e.target)
+        nav?.classList.contains("open") &&
+        !nav.contains(e.target as Node) &&
+        !menuToggle?.contains(e.target as Node)
       ) {
         nav.classList.remove("open");
       }
     });
   });
 </script>
+
+<style>
+  .lang-selector {
+    display: flex;
+    gap: 8px;
+    margin-left: 16px;
+  }
+
+  .lang-btn {
+    background: none;
+    border: none;
+    color: #64748b;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 12px;
+    transition: color 0.2s;
+    cursor: pointer;
+    padding: 0;
+  }
+
+  .lang-btn:hover,
+  .lang-btn.active {
+    color: #005DAA;
+  }
+
+  .lang-selector span {
+    color: #cbd5e1;
+  }
+</style>
