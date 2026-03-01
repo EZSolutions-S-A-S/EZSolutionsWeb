@@ -104,7 +104,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
         if (!firstError) firstError = field;
 
-        field.classList.add("field-error");
+        // Si es un select hidden dentro de CustomSelect, aplicar error al trigger
+        if (field.tagName === 'SELECT' && field.style.display === 'none') {
+          const wrapper = field.closest('.custom-select-wrapper');
+          if (wrapper) {
+            const trigger = wrapper.querySelector('.custom-select__trigger');
+            if (trigger) {
+              trigger.classList.add("field-error");
+            }
+          }
+        } else {
+          field.classList.add("field-error");
+        }
 
         const parent = field.parentElement;
         if (parent) {
@@ -134,7 +145,18 @@ document.addEventListener("DOMContentLoaded", () => {
 
   form.querySelectorAll("input, textarea, select").forEach(field => {
     field.addEventListener("input", () => {
-      field.classList.remove("field-error");
+      // Si es un select hidden dentro de CustomSelect, remover error del trigger
+      if (field.tagName === 'SELECT' && field.style.display === 'none') {
+        const wrapper = field.closest('.custom-select-wrapper');
+        if (wrapper) {
+          const trigger = wrapper.querySelector('.custom-select__trigger');
+          if (trigger) {
+            trigger.classList.remove("field-error");
+          }
+        }
+      } else {
+        field.classList.remove("field-error");
+      }
 
       const parent = field.parentElement;
       if (!parent) return;

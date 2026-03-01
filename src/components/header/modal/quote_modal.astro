@@ -32,28 +32,28 @@ import CustomSelect from '../../inputs/dropdown_select.astro';
         <div class="quote-form-grid">
 
           <div class="quote-form-group">
-            <label>
+            <label for="quote-name">
                 Nombre completo <span class="quote-required">*</span>
             </label>
-            <input type="text" placeholder="Tu nombre" required />
+            <input id="quote-name" name="name" type="text" placeholder="Tu nombre" required />
           </div>
 
           <div class="quote-form-group">
-            <label>
+            <label for="quote-email">
                 Correo electrónico <span class="quote-required">*</span>
             </label>
-            <input type="email" placeholder="tu@email.com" required />
+            <input id="quote-email" name="email" type="email" placeholder="tu@email.com" required />
           </div>
 
           <div class="quote-form-group">
-            <label>
+            <label for="quote-company">
                 Empresa <span class="quote-optional">(opcional)</span>
             </label>
-            <input type="text" placeholder="Nombre de tu empresa" />
+            <input id="quote-company" name="company" type="text" placeholder="Nombre de tu empresa" />
           </div>
 
           <div class="quote-form-group">
-            <label>
+            <label for="project-type-select">
               Tipo de proyecto <span class="quote-required">*</span>
             </label>
             <CustomSelect 
@@ -74,20 +74,22 @@ import CustomSelect from '../../inputs/dropdown_select.astro';
         </div>
 
         <div class="quote-form-group quote-full">
-          <label>
+          <label for="quote-description">
             Descripción del proyecto <span class="quote-required">*</span>
           </label>
           <textarea
+            id="quote-description"
+            name="description"
             rows="5"
             placeholder="Cuéntanos sobre tu proyecto, objetivos y necesidades"
             required></textarea>
         </div>
 
         <div class="quote-form-group quote-full">
-          <label>
+          <label for="quote-budget">
             Presupuesto estimado <span class="quote-optional">(opcional)</span>
         </label>
-          <input type="text" placeholder="Ej: $1.500.000 - $3.000.000 COP" />
+          <input id="quote-budget" name="budget" type="text" placeholder="Ej: $1.500.000 - $3.000.000 COP" />
         </div>
 
         <button type="submit" class="quote-submit-btn">
@@ -100,4 +102,6 @@ import CustomSelect from '../../inputs/dropdown_select.astro';
   </div>
 </div>
 
-<script src="./quote-modal.js"></script>
+<script>
+  import "./quote-modal.js";
+</script>
