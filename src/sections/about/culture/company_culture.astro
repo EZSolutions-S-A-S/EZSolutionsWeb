@@ -1,5 +1,9 @@
 ---
 import HexagonBg from './hexagon_bg.astro';
+import rocketIcon from '../icons_about/rocket-innovation.svg';
+import teamworkIcon from '../icons_about/teamwork.svg';
+import clientIcon from '../icons_about/client-focus.svg';
+import hexagonIcon from '../../../assets/icons/hexagon.svg';
 ---
 
 <section class="company-culture">
@@ -21,7 +25,7 @@ import HexagonBg from './hexagon_bg.astro';
       <div class="culture-card">
         <div class="culture-icon">
           <HexagonBg />
-          <img class="icon" src="src/sections/about/icons_about/rocket-innovation.svg" alt="Innovation">
+          <img class="icon" src={rocketIcon.src} alt="Innovation">
         </div>
         <h3>Innovación Constante</h3>
         <p>
@@ -32,7 +36,7 @@ import HexagonBg from './hexagon_bg.astro';
       <div class="culture-card">
         <div class="culture-icon">
           <HexagonBg />
-          <img class="icon" src="src/sections/about/icons_about/teamwork.svg" alt="Teamwork">
+          <img class="icon" src={teamworkIcon.src} alt="Teamwork">
         </div>
         <h3>Trabajo Colaborativo</h3>
         <p>
@@ -43,7 +47,7 @@ import HexagonBg from './hexagon_bg.astro';
       <div class="culture-card">
         <div class="culture-icon">
           <HexagonBg />
-          <img class="icon" src="src/sections/about/icons_about/client-focus.svg" alt="Client Focus">
+          <img class="icon" src={clientIcon.src} alt="Client Focus">
         </div>
         <h3>Enfoque en el Cliente</h3>
         <p>
@@ -53,6 +57,6 @@ import HexagonBg from './hexagon_bg.astro';
 
     </div>
   <div class="about-decoration">
-  <img src="src/assets/icons/hexagon.svg" class="hex hex-1c" alt="" />
+  <img src={hexagonIcon.src} class="hex hex-1c" alt="" />
   </div>
 </section>
