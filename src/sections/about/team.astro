@@ -1,9 +1,13 @@
 ---
 import TeamCard from "./components/team_card.astro";
+import juan from './img/juan.png';
+import andres from './img/andres.png';
+import valen from './img/valen.png';
+import hexagonIcon from '../../assets/icons/hexagon.svg';
 
 const teamMembers = [
   {
-    image: "src/sections/about/img/juan.png",
+    image: juan.src,
     name: "Juan Andrés",
     role: "CEO & Fundador",
     description:
@@ -12,7 +16,7 @@ const teamMembers = [
     github: "https://github.com/JPosda48",
   },
   {
-    image: "src/sections/about/img/andres.png",
+    image: andres.src,
     name: "Andrés Felipe",
     role: "CTO & Fundador",
     description:
@@ -21,7 +25,7 @@ const teamMembers = [
     github: "https://github.com/AFTR05",
   },
   {
-    image: "src/sections/about/img/valen.png",
+    image: valen.src,
     name: "Valentina",
     role: "UX/UI Designer & Developer",
     description:
@@ -50,9 +54,9 @@ const teamMembers = [
   </div>
 
       <div class="team-decoration">
-  <img src="src/assets/icons/hexagon.svg" class="hex hex-1t" alt="" />
-  <img src="src/assets/icons/hexagon.svg" class="hex hex-2t" alt="" />
-  <img src="src/assets/icons/hexagon.svg" class="hex hex-3t" alt="" />
+  <img src={hexagonIcon.src} class="hex hex-1t" alt="" />
+  <img src={hexagonIcon.src} class="hex hex-2t" alt="" />
+  <img src={hexagonIcon.src} class="hex hex-3t" alt="" />
 
   </div>
   </div>
