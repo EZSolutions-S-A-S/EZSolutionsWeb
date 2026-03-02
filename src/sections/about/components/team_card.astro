@@ -1,4 +1,7 @@
 ---
+import linkedinIcon from '../../../assets/icons/linkedin.svg';
+import githubIcon from '../../../assets/icons/github.svg';
+
 interface Props {
   image: string;
   name: string;
@@ -24,10 +27,10 @@ const { image, name, role, description, linkedin, github } = Astro.props;
 
     <div class="team-links">
       <a href={linkedin} target="_blank" rel="noopener noreferrer">
-        <img src="src/assets/icons/linkedin.svg" alt="LinkedIn" />
+        <img src={linkedinIcon.src} alt="LinkedIn" />
       </a>
       <a href={github} target="_blank" rel="noopener noreferrer">
-        <img src="src/assets/icons/github.svg" alt="GitHub" />
+        <img src={githubIcon.src} alt="GitHub" />
       </a>
     </div>
   </div>
