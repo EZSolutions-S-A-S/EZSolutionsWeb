@@ -7,11 +7,128 @@
     "contacto": "Contacto",
     "quote": "Cotizar Proyecto"
   },
-  "hero": {
-    "badge": "Desarrollo de Software a la Medida",
-    "title": "Transformamos tus",
-    "subtitle": "ideas en soluciones digitales"
-  },
+
+  "home": {
+    "heroBadge": "Desarrollo de Software a la Medida",
+    "heroTitleLine1": "Transformamos tus",
+    "heroTitleHighlight": "ideas en soluciones",
+    "heroTitleLine2": "digitales",
+    "heroDescription": "Creamos software personalizado que impulsa la digitalización de tu empresa, optimizando procesos clave como inventario y ventas con herramientas accesibles e intuitivas.",
+    "heroPrimaryButton": "Iniciar Proyecto",
+    "heroSecondaryButton": "Conocer Más"
+},
+
+  "stats": {
+    "statProjects": "Proyectos",
+    "statClients": "Clientes",
+    "statYears": "Años"
+},
+
+  "about": {
+    "badge": "Quiénes Somos",
+    "title": "Expertos en Software a la Medida",
+    "description": "Somos una empresa dedicada al desarrollo de soluciones tecnológicas personalizadas que impulsan la transformación digital de pequeñas y medianas empresas.",
+    "missionTitle": "Misión",
+    "missionText": "Proporcionar soluciones tecnológicas personalizadas que impulsen la digitalización de pequeñas empresas, optimizando sus procesos clave como inventario y ventas, mediante herramientas accesibles, intuitivas y enfocadas en sus necesidades reales.",
+    "visionTitle": "Visión",
+    "visionText": "Ser referentes en el desarrollo de software a medida para empresas del sector manufacturero y comercial en el Quindío, promoviendo la transformación digital a través de soluciones innovadoras, escalables y centradas en el usuario.",
+    "valuesTitle": "Nuestros Valores",
+    "innovationTitle": "Innovación",
+    "innovationText": "Buscamos constantemente nuevas formas de resolver problemas.",
+    "commitmentTitle": "Compromiso",
+    "commitmentText": "Nos dedicamos al éxito de cada proyecto y cliente.",
+    "transparencyTitle": "Transparencia",
+    "transparencyText": "Comunicación clara y honesta en todo momento.",
+    "qualityTitle": "Calidad",
+    "qualityText": "Entregamos software robusto y bien documentado."
+},
+
+  "companyCulture": {
+    "badge": "Cultura Empresarial",
+    "title": "Nuestra Forma de Trabajar",
+    "titleHighlight": "Trabajar",
+    "description": "En el corazón de nuestra empresa están los valores que nos guían y la pasión por crear software excepcional.",
+    "innovationTitle": "Innovación Constante",
+    "innovationText": "Siempre exploramos nuevas tecnologías y metodologías para ofrecer las mejores soluciones.",
+    "teamworkTitle": "Trabajo Colaborativo",
+    "teamworkText": "Trabajamos en equipo con nuestros clientes, involucrándolos en cada etapa del desarrollo.",
+    "clientFocusTitle": "Enfoque en el Cliente",
+    "clientFocusText": "Tu éxito es nuestro éxito. Nos enfocamos en entender y superar tus expectativas."
+},
+
+  "team": {
+    "badge": "Nuestro Equipo",
+    "title": "El Talento Detrás de la Innovación",
+    "titleHighlight": "Innovación",
+    "description": "Un equipo multidisciplinario de profesionales apasionados por la tecnología y comprometidos con el éxito de nuestros clientes.",
+    "juanRole": "CEO & Fundador",
+    "juanDescription": "Líder estratégico con visión empresarial y enfoque en innovación tecnológica.",
+    "andresRole": "CTO & Fundador",
+    "andresDescription": "Arquitecto de software especializado en soluciones escalables y seguras.",
+    "valentinaRole": "UX/UI Designer & Developer",
+    "valentinaDescription": "Diseñadora y desarrolladora apasionada por crear experiencias digitales intuitivas y accesibles."
+},
+
+  "clients": {
+    "badge": "Clientes",
+    "title": "Empresas que Confían en Nosotros",
+    "titleHighlight": "Confían en Nosotros",
+    "description": "Hemos ayudado a diversas empresas del sector manufacturero y comercial a digitalizar sus procesos y aumentar su productividad.",
+    "company1": "Empresa 1",
+    "company1Type": "Colchones Posada",
+    "company2": "Empresa 2",
+    "company2Type": "Comercio",
+    "company3": "Empresa 3",
+    "company3Type": "Servicios",
+    "company4": "Empresa 4",
+    "company4Type": "Textil",
+    "company5": "Empresa 5",
+    "company5Type": "Logística",
+    "company6": "Empresa 6",
+    "company6Type": "Alimentos"
+},
+
+  "services": {
+    "badge": "Nuestros Servicios",
+    "title": "Soluciones que Impulsan tu Negocio",
+    "titleHighlight": "Impulsan tu Negocio",
+    "description": "Ofrecemos una gama completa de servicios de desarrollo de software diseñados para optimizar y digitalizar tu empresa.",
+    "customTitle": "Software a la Medida",
+    "customText": "Desarrollamos aplicaciones personalizadas que se adaptan perfectamente a los procesos de tu negocio.",
+    "inventoryTitle": "Sistemas de Inventario",
+    "inventoryText": "Control total de tu inventario con seguimiento en tiempo real, alertas y reportes detallados.",
+    "salesTitle": "Sistemas de Ventas",
+    "salesText": "Punto de venta moderno con facturación, gestión de clientes y análisis de ventas.",
+    "appsTitle": "Apps Web y Móviles",
+    "appsText": "Aplicaciones multiplataforma que funcionan en cualquier dispositivo con experiencia nativa.",
+    "automationTitle": "Automatización",
+    "automationText": "Automatizamos procesos repetitivos para aumentar la eficiencia y reducir errores."
+},
+
+  "technologies": {
+    "badge": "Stack Tecnológico",
+    "title": "Tecnologías que Dominamos",
+    "description": "Ofrecemos una gama completa de servicios de desarrollo de software diseñados para optimizar y digitalizar tu empresa.",
+    "footer": "Y muchas más tecnologías adaptadas a las necesidades de cada proyecto"
+},
+
+  "contact": {
+    "badge": "Contacto",
+    "title": "¿Listo para Empezar tu Proyecto?",
+    "titleHighlight": "Empezar tu Proyecto?",
+    "description": "Cuéntanos sobre tu idea y te ayudaremos a convertirla en realidad. ¡Estamos aquí para ayudarte!",
+    "locationTitle": "Ubicación",
+    "phoneTitle": "Teléfono",
+    "emailTitle": "Email",
+    "formName": "Nombre",
+    "formEmail": "Email",
+    "formMessage": "Mensaje",
+    "formNamePlaceholder": "Tu nombre",
+    "formEmailPlaceholder": "tu@email.com",
+    "formMessagePlaceholder": "Cuéntanos sobre tu proyecto",
+    "formButton": "Enviar Mensaje"
+},
+
   "footer": {
     "description": "Transformamos ideas en soluciones digitales. Software a la medida para impulsar tu negocio.",
     "company": "Empresa",
@@ -29,6 +146,7 @@
     "copyright": "© 2026 EZsolutions S.A.S. Todos los derechos reservados.",
     "location": "Quindío, Colombia"
   },
+
   "privacy": {
     "title": "Política de Privacidad",
     "section1": "1. Información que Recopilamos",
@@ -58,6 +176,7 @@
     "updated": "Última actualización: 19 de febrero de 2026",
     "location": "Ubicación: Quindío, Colombia"
   },
+
   "terms": {
     "title": "Términos de Servicio",
     "section1": "1. Aceptación de los Términos",
@@ -94,6 +213,7 @@
     "updated": "Última actualización: 19 de febrero de 2026",
     "location": "Ubicación: Quindío, Colombia"
   },
+
   "quoteForm": {
     "title": "Cotizar Proyecto",
     "subtitle": "Cuéntanos sobre tu proyecto y te contactaremos pronto.",
