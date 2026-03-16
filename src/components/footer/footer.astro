@@ -81,6 +81,19 @@ import logoWhite from '../../assets/icons/logo-ezsolutions-white.svg';
   </div>
 </footer>
 
+<script is:inline>
+  (function() {
+    const savedLang = localStorage.getItem('lang') || 'es';
+    const langButtons = document.querySelectorAll('[data-lang-switch]');
+    langButtons.forEach(btn => {
+      btn.classList.remove('active');
+      if (btn.getAttribute('data-lang-switch') === savedLang) {
+        btn.classList.add('active');
+      }
+    });
+  })();
+</script>
+
 <script>
   import { setLanguage } from '../../i18n/i18n-client';
   
