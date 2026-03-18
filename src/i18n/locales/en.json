@@ -47,6 +47,7 @@
 
   "companyCulture": {
     "badge": "Company Culture",
+    "titleLine1": "Our Way of",
     "title": "Our Way of Working",
     "titleHighlight": "Working",
     "description": "At the heart of our company are the values that guide us and the passion for creating exceptional software.",
@@ -61,6 +62,7 @@
   "team": {
     "badge": "Our Team",
     "titleLine1": "The Talent Behind",
+    "title": "The Talent Behind Innovation",
     "titleHighlight": "Innovation",
     "description": "A multidisciplinary team of professionals passionate about technology and committed to the success of our clients.",
     "juanRole": "CEO & Founder",
