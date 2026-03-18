@@ -83,7 +83,11 @@
 }
 
 .hero h1 span {
-  color: var(--blue);
+  color: #000;
+}
+
+.hero h1 .highlight {
+  color: #005DAA;
 }
 
 .hero p {

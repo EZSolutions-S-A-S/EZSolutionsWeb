@@ -28,8 +28,8 @@
   color: #0f172a;
 }
 
-.culture-title span {
-  color: #005daa;
+.culture-title .highlight {
+  color: #005DAA;
 }
 
 .culture-description {

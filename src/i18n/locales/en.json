@@ -26,7 +26,8 @@
 
   "about": {
     "badge": "About Us",
-    "title": "Experts in Custom Software",
+    "titleLine1": "Experts in",
+    "titleHighlight": "Custom Software",
     "description": "We are a company dedicated to developing personalized technological solutions that drive the digital transformation of small and medium-sized businesses.",
     "missionTitle": "Mission",
     "missionText": "Provide customized technological solutions that promote the digitalization of small businesses, optimizing key processes such as inventory and sales through accessible and intuitive tools focused on their real needs.",
@@ -45,7 +46,7 @@
 
   "companyCulture": {
     "badge": "Company Culture",
-    "title": "Our Way of Working",
+    "titleLine1": "Our Way of",
     "titleHighlight": "Working",
     "description": "At the heart of our company are the values that guide us and the passion for creating exceptional software.",
     "innovationTitle": "Constant Innovation",
@@ -58,7 +59,7 @@
 
   "team": {
     "badge": "Our Team",
-    "title": "The Talent Behind Innovation",
+    "titleLine1": "The Talent Behind",
     "titleHighlight": "Innovation",
     "description": "A multidisciplinary team of professionals passionate about technology and committed to the success of our clients.",
     "juanRole": "CEO & Founder",
@@ -90,7 +91,7 @@
 
   "services": {
     "badge": "Our Services",
-    "title": "Solutions that Boost Your Business",
+    "title": "Solutions that",
     "titleHighlight": "Boost Your Business",
     "description": "We offer a complete range of software development services designed to optimize and digitize your company.",
     "customTitle": "Custom Software",

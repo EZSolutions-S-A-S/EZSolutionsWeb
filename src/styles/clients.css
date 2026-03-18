@@ -44,7 +44,7 @@
   margin-bottom: 16px;
 }
 
-.clients-title span {
+.clients-title .highlight {
   color: #005DAA;
 }
 
