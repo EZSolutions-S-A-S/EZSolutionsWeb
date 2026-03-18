@@ -5,13 +5,13 @@ import githubIcon from '../../../assets/icons/github.svg';
 interface Props {
   image: string;
   name: string;
-  role: string;
-  description: string;
+  roleKey: string;
+  descriptionKey: string;
   linkedin: string;
   github: string;
 }
 
-const { image, name, role, description, linkedin, github } = Astro.props;
+const { image, name, roleKey, descriptionKey, linkedin, github } = Astro.props;
 ---
 
 <article class="team-card" data-team-card>
@@ -19,11 +19,11 @@ const { image, name, role, description, linkedin, github } = Astro.props;
 
   <div class="team-info" data-team-info>
     <h3>{name}</h3>
-    <span>{role}</span>
+    <span data-i18n-key={roleKey}></span>
   </div>
 
   <div class="team-overlay" data-team-overlay>
-    <p>{description}</p>
+    <p data-i18n-key={descriptionKey}></p>
 
     <div class="team-links">
       <a href={linkedin} target="_blank" rel="noopener noreferrer">

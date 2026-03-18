@@ -1,13 +1,12 @@
 ---
 import TeamCard from "./components/team_card.astro";
-import juan from './img/juan.png';
-import andres from './img/andres.png';
-import valen from './img/valen.png';
-import hexagonIcon from '../../assets/icons/hexagon.svg';
-import { t } from '../../i18n/i18n.config';
-const lang = Astro.props.lang || 'es';
+import juan from "./img/juan.png";
+import andres from "./img/andres.png";
+import valen from "./img/valen.png";
+import hexagonIcon from "../../assets/icons/hexagon.svg";
+import { t } from "../../i18n/i18n.config";
+const lang = Astro.props.lang || "es";
 const translate = (key: string) => t(key, lang);
-
 
 const teamMembers = [
   {
@@ -39,35 +38,39 @@ const teamMembers = [
 
 <section class="team">
   <div class="team-container">
-  <span class="team-badge" data-i18n-key="team.badge">Nuestro Equipo</span>
+    <span class="team-badge" data-i18n-key="team.badge">Nuestro Equipo</span>
 
-  <h2 class="team-title">
-  <span data-i18n-key="team.titleLine1">El Talento Detrás de la</span>
-  <span class="highlight" data-i18n-key="team.titleHighlight">Innovación</span>
-  </h2>
+    <h2 class="team-title">
+      <span data-i18n-key="team.titleLine1">El Talento Detrás de la</span>
+      <span class="highlight" data-i18n-key="team.titleHighlight"
+        >Innovación</span
+      >
+    </h2>
 
-  <p class="team-description" data-i18n-key="team.description">
-    Un equipo multidisciplinario de profesionales apasionados por la tecnología
-    y comprometidos con el éxito de nuestros clientes.
-  </p>
+    <p class="team-description" data-i18n-key="team.description">
+      Un equipo multidisciplinario de profesionales apasionados por la
+      tecnología y comprometidos con el éxito de nuestros clientes.
+    </p>
 
-  <div class="team-grid">
-      {teamMembers.map((member) => (
-        <TeamCard
-        image={member.image}
-        name={member.name}
-          role={translate(member.roleKey)}
-          description={translate(member.descriptionKey)}
-        linkedin={member.linkedin}
-        github={member.github}
-      />
-    ))}
-  </div>
+    <div class="team-grid">
+      {
+        teamMembers.map((member) => (
+          <TeamCard
+            image={member.image}
+            name={member.name}
+            roleKey={member.roleKey}
+            descriptionKey={member.descriptionKey}
+            linkedin={member.linkedin}
+            github={member.github}
+          />
+        ))
+      }
+    </div>
 
-  <div class="team-decoration">
-    <img src={hexagonIcon.src} class="hex hex-1t" alt="" />
-    <img src={hexagonIcon.src} class="hex hex-2t" alt="" />
-    <img src={hexagonIcon.src} class="hex hex-3t" alt="" />
-  </div>
+    <div class="team-decoration">
+      <img src={hexagonIcon.src} class="hex hex-1t" alt="" />
+      <img src={hexagonIcon.src} class="hex hex-2t" alt="" />
+      <img src={hexagonIcon.src} class="hex hex-3t" alt="" />
+    </div>
   </div>
 </section>
