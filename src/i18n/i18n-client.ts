@@ -78,11 +78,14 @@ function updatePageTranslations(lang: Language) {
   });
 }
 
-// Inicializar las traducciones al cargar
 if (typeof document !== 'undefined') {
-  document.addEventListener('DOMContentLoaded', () => {
-    // Cargar idioma guardado
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = (localStorage.getItem('lang') || 'es') as Language;
+      updatePageTranslations(savedLang);
+    });
+  } else {
     const savedLang = (localStorage.getItem('lang') || 'es') as Language;
-    setLanguage(savedLang);
-  });
+    updatePageTranslations(savedLang);
+  }
 }

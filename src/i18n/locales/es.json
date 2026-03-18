@@ -26,8 +26,12 @@
 
   "about": {
     "badge": "Quiénes Somos",
+<<<<<<< HEAD
     "titleLine1": "Expertos en",
     "titleHighlight": "Software a la Medida",
+=======
+    "title": "Expertos en Software a la Medida",
+>>>>>>> translations_fix
     "description": "Somos una empresa dedicada al desarrollo de soluciones tecnológicas personalizadas que impulsan la transformación digital de pequeñas y medianas empresas.",
     "missionTitle": "Misión",
     "missionText": "Proporcionar soluciones tecnológicas personalizadas que impulsen la digitalización de pequeñas empresas, optimizando sus procesos clave como inventario y ventas, mediante herramientas accesibles, intuitivas y enfocadas en sus necesidades reales.",
@@ -46,7 +50,11 @@
 
   "companyCulture": {
     "badge": "Cultura Empresarial",
+<<<<<<< HEAD
     "titleLine1": "Nuestra Forma de Trabajar",
+=======
+    "title": "Nuestra Forma de Trabajar",
+>>>>>>> translations_fix
     "titleHighlight": "Trabajar",
     "description": "En el corazón de nuestra empresa están los valores que nos guían y la pasión por crear software excepcional.",
     "innovationTitle": "Innovación Constante",
@@ -59,14 +67,22 @@
 
   "team": {
     "badge": "Nuestro Equipo",
+<<<<<<< HEAD
     "titleLine1": "El Talento Detrás de la",
+=======
+    "title": "El Talento Detrás de la Innovación",
+>>>>>>> translations_fix
     "titleHighlight": "Innovación",
     "description": "Un equipo multidisciplinario de profesionales apasionados por la tecnología y comprometidos con el éxito de nuestros clientes.",
     "juanRole": "CEO & Fundador",
     "juanDescription": "Líder estratégico con visión empresarial y enfoque en innovación tecnológica.",
     "andresRole": "CTO & Fundador",
     "andresDescription": "Arquitecto de software especializado en soluciones escalables y seguras.",
+<<<<<<< HEAD
     "valentinaRole": "Diseñadora UX/UI y Desarrolladora",
+=======
+    "valentinaRole": "UX/UI Designer & Developer",
+>>>>>>> translations_fix
     "valentinaDescription": "Diseñadora y desarrolladora apasionada por crear experiencias digitales intuitivas y accesibles."
 },
 
