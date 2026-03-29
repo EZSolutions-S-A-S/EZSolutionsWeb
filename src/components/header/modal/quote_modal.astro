@@ -87,7 +87,6 @@ import CustomSelect from '../../inputs/dropdown_select.astro';
               id="project-type-select" 
               name="project_type" 
               required={true}
-              placeholder="Selecciona una opcion"
               options={[
                 { label: "Software a la medida", i18nKey: "quoteForm.projectTypeOption1" },
                 { label: "Sistema de inventario", i18nKey: "quoteForm.projectTypeOption2" },
@@ -120,6 +119,9 @@ import CustomSelect from '../../inputs/dropdown_select.astro';
           </label>
           <input id="quote-budget" name="budget" type="text" placeholder="Ej: $1.500.000 - $3.000.000 COP" data-i18n-attr='{"placeholder": "quoteForm.budgetPlaceholder"}' />
         </div>
+
+        <!-- Honeypot field: hidden from real users, filled by spam bots -->
+        <input id="quote-website" name="website" type="text" style="display: none; position: absolute; left: -9999px;" tabindex="-1" autocomplete="off" />
 
         <button type="submit" class="quote-submit-btn" data-i18n-key="quoteForm.submitBtn">
           Enviar Solicitud

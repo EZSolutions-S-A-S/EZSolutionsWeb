@@ -13,6 +13,82 @@ interface QuoteFormData {
   project_type: string;
   description: string;
   budget?: string;
+  website?: string; // Honeypot field - should always be empty
+}
+
+// HTML escape function to prevent injection
+function escapeHtml(text: string): string {
+  const map: { [key: string]: string } = {
+    '&': '&amp;',
+    '<': '&lt;',
+    '>': '&gt;',
+    '"': '&quot;',
+    "'": '&#039;'
+  };
+  return text.replace(/[&<>"']/g, (char) => map[char]);
+}
+
+// Rate limiting: track requests per IP
+const rateLimitMap = new Map<string, number[]>();
+const RATE_LIMIT_WINDOW = 60 * 1000; // 1 minute
+const MAX_REQUESTS_PER_MINUTE = 3; // Max 3 requests per minute per IP
+
+function getClientIp(request: Request): string {
+  return (
+    request.headers.get('x-forwarded-for')?.split(',')[0].trim() ||
+    request.headers.get('cf-connecting-ip') ||
+    'unknown'
+  );
+}
+
+function checkRateLimit(ip: string): boolean {
+  const now = Date.now();
+  const requests = rateLimitMap.get(ip) || [];
+  
+  // Remove old requests outside the window
+  const recentRequests = requests.filter(time => now - time < RATE_LIMIT_WINDOW);
+  
+  if (recentRequests.length >= MAX_REQUESTS_PER_MINUTE) {
+    return false; // Rate limit exceeded
+  }
+  
+  recentRequests.push(now);
+  rateLimitMap.set(ip, recentRequests);
+  
+  // Cleanup old entries occasionally
+  if (Math.random() < 0.1) {
+    for (const [key, times] of rateLimitMap.entries()) {
+      if (times.every(time => now - time >= RATE_LIMIT_WINDOW)) {
+        rateLimitMap.delete(key);
+      }
+    }
+  }
+  
+  return true;
+}
+
+// Validate email format
+function isValidEmail(email: string): boolean {
+  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  return emailRegex.test(email) && email.length <= 254;
+}
+
+// Check if origin is allowed
+function isValidOrigin(request: Request): boolean {
+  const origin = request.headers.get('origin');
+  const referer = request.headers.get('referer');
+  
+  const allowedOrigins = [
+    'https://ezsolutionssas.online',
+    'https://www.ezsolutionssas.online',
+    'http://localhost:3000', // Development
+    'http://localhost:4321', // Astro dev
+  ];
+  
+  if (origin && allowedOrigins.includes(origin)) return true;
+  if (referer && allowedOrigins.some(allowed => referer.startsWith(allowed))) return true;
+  
+  return false;
 }
 
 export const POST: APIRoute = async ({ request }) => {
@@ -22,6 +98,23 @@ export const POST: APIRoute = async ({ request }) => {
         status: 405,
         headers: { 'Content-Type': 'application/json' },
       });
+    }
+
+    // Security check 1: Rate limiting
+    const clientIp = getClientIp(request);
+    if (!checkRateLimit(clientIp)) {
+      return new Response(
+        JSON.stringify({ error: 'Demasiadas solicitudes. Intenta de nuevo en un minuto.' }),
+        { status: 429, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Security check 2: Origin validation
+    if (!isValidOrigin(request)) {
+      return new Response(
+        JSON.stringify({ error: 'Solicitud no autorizada' }),
+        { status: 403, headers: { 'Content-Type': 'application/json' } }
+      );
     }
 
     const bodyText = await request.text();
@@ -50,8 +143,51 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
+    // Security check 3: Honeypot validation (reject if filled)
+    if (data.website) {
+      // Silently reject spam bots that fill the honeypot field
+      return new Response(
+        JSON.stringify({ error: 'Solicitud rechazada' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Security check 4: Email format validation
+    if (!isValidEmail(data.email)) {
+      return new Response(
+        JSON.stringify({ error: 'Email inválido' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
+    // Security check 5: Input length validation (prevent abuse)
+    const MAX_FIELD_LENGTH = 1000;
+    if (
+      data.name.length > MAX_FIELD_LENGTH ||
+      data.phone.length > 20 ||
+      data.project_type.length > MAX_FIELD_LENGTH ||
+      data.description.length > 5000 ||
+      (data.company && data.company.length > MAX_FIELD_LENGTH) ||
+      (data.budget && data.budget.length > MAX_FIELD_LENGTH)
+    ) {
+      return new Response(
+        JSON.stringify({ error: 'Algunos campos exceden la longitud máxima permitida' }),
+        { status: 400, headers: { 'Content-Type': 'application/json' } }
+      );
+    }
+
     const companyEmail = import.meta.env.RESEND_QUOTE_EMAIL || 'ezsolutionssas@example.com';
     const senderEmail = import.meta.env.RESEND_FROM_EMAIL || 'contacto@ezsolutionssas.online';
+
+    // Escape all user inputs to prevent HTML injection
+    const escapedName = escapeHtml(data.name);
+    const escapedEmail = escapeHtml(data.email);
+    const escapedPhone = escapeHtml(data.phone);
+    const escapedCompany = data.company ? escapeHtml(data.company) : '';
+    const escapedProjectType = escapeHtml(data.project_type);
+    const escapedBudget = data.budget ? escapeHtml(data.budget) : '';
+    // For description: escape first, then convert newlines to <br>
+    const escapedDescription = escapeHtml(data.description).replace(/\n/g, '<br>');
 
     const emailContent = `
       <!DOCTYPE html>
@@ -90,19 +226,19 @@ export const POST: APIRoute = async ({ request }) => {
               <div class="section-title">Información del Cliente</div>
               <div class="info-row">
                 <span class="info-label">Nombre:</span>
-                <span class="info-value"><strong>${data.name}</strong></span>
+                <span class="info-value"><strong>${escapedName}</strong></span>
               </div>
               <div class="info-row">
                 <span class="info-label">Email:</span>
-                <span class="info-value"><a href="mailto:${data.email}" style="color: #005DAA; text-decoration: none;">${data.email}</a></span>
+                <span class="info-value"><a href="mailto:${escapedEmail}" style="color: #005DAA; text-decoration: none;">${escapedEmail}</a></span>
               </div>
               <div class="info-row">
                 <span class="info-label">Teléfono:</span>
-                <span class="info-value"><a href="tel:${data.phone}" style="color: #005DAA; text-decoration: none;">${data.phone}</a></span>
+                <span class="info-value"><a href="tel:${escapedPhone}" style="color: #005DAA; text-decoration: none;">${escapedPhone}</a></span>
               </div>
-              ${data.company ? `<div class="info-row">
+              ${escapedCompany ? `<div class="info-row">
                 <span class="info-label">Empresa:</span>
-                <span class="info-value">${data.company}</span>
+                <span class="info-value">${escapedCompany}</span>
               </div>` : ''}
             </div>
 
@@ -112,18 +248,18 @@ export const POST: APIRoute = async ({ request }) => {
               <div class="section-title">Detalles del Proyecto</div>
               <div class="info-row">
                 <span class="info-label">Tipo:</span>
-                <span class="info-value"><span class="highlight">${data.project_type}</span></span>
+                <span class="info-value"><span class="highlight">${escapedProjectType}</span></span>
               </div>
-              ${data.budget ? `<div class="info-row">
+              ${escapedBudget ? `<div class="info-row">
                 <span class="info-label">Presupuesto:</span>
-                <span class="info-value"><strong>${data.budget}</strong></span>
+                <span class="info-value"><strong>${escapedBudget}</strong></span>
               </div>` : ''}
             </div>
 
             <div class="section">
               <div class="section-title">Descripción</div>
               <div class="description-box">
-                ${data.description.replace(/\n/g, '<br>')}
+                ${escapedDescription}
               </div>
             </div>
 
@@ -148,7 +284,7 @@ export const POST: APIRoute = async ({ request }) => {
     const response = await resend.emails.send({
       from: senderEmail,
       to: companyEmail,
-      subject: `Nueva Cotización - ${data.name}`,
+      subject: `Nueva Cotización - ${escapedName}`,
       html: emailContent,
       replyTo: data.email,
     });
