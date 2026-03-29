@@ -3,8 +3,6 @@ import { Resend } from 'resend';
 
 export const prerender = false;
 
-const resend = new Resend(import.meta.env.RESEND_API_KEY);
-
 interface QuoteFormData {
   name: string;
   email: string;
@@ -281,6 +279,8 @@ export const POST: APIRoute = async ({ request }) => {
       </html>
     `;
 
+    // Initialize Resend client here (at runtime in server function) to avoid exposing API key in bundle
+    const resend = new Resend(import.meta.env.RESEND_API_KEY);
     const response = await resend.emails.send({
       from: senderEmail,
       to: companyEmail,
