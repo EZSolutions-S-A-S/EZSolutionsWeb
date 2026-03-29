@@ -1,33 +1,45 @@
 ---
 import { setupCustomSelects } from './dropdown-select';
 
+interface Option {
+  label: string;
+  i18nKey?: string;
+}
+
 interface Props {
   id: string;
   name: string;
-  options: string[];
+  options: (string | Option)[];
   placeholder?: string;
   required?: boolean;
 }
 
 const { id, name, options, placeholder = "Selecciona una opción", required = false } = Astro.props;
+
+// Normalizar opciones para que todas sean objetos
+const normalizedOptions = options.map(opt => 
+  typeof opt === 'string' ? { label: opt } : opt
+);
 ---
 
 <div class="custom-select-wrapper" id={`wrapper-${id}`}>
   <div class="custom-select">
     <div class="custom-select__trigger">
-      <span>{placeholder}</span>
+      <span class="trigger-text" data-i18n-key="quoteForm.selectPlaceholder">{placeholder}</span>
       <div class="arrow"></div>
     </div>
     <div class="custom-options">
-      {options.map((option) => (
-        <span class="custom-option" data-value={option}>{option}</span>
+      {normalizedOptions.map((option) => (
+        <span class="custom-option" data-value={option.label} data-i18n-key={option.i18nKey}>
+          {option.label}
+        </span>
       ))}
     </div>
   </div>
   <select {id} {name} {required} style="display: none;">
     <option value="" disabled selected>{placeholder}</option>
-    {options.map((option) => (
-      <option value={option}>{option}</option>
+    {normalizedOptions.map((option) => (
+      <option value={option.label}>{option.label}</option>
     ))}
   </select>
 </div>

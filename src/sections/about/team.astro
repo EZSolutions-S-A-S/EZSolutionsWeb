@@ -1,35 +1,33 @@
 ---
 import TeamCard from "./components/team_card.astro";
-import juan from './img/juan.png';
-import andres from './img/andres.png';
-import valen from './img/valen.png';
-import hexagonIcon from '../../assets/icons/hexagon.svg';
+import juan from "./img/juan.png";
+import andres from "./img/andres.png";
+import valen from "./img/valen.png";
+import hexagonIcon from "../../assets/icons/hexagon.svg";
+
 
 const teamMembers = [
   {
     image: juan.src,
     name: "Juan Andrés",
-    role: "CEO & Fundador",
-    description:
-      "Líder estratégico con visión empresarial y enfoque en innovación tecnológica.",
-    linkedin: "https://linkedin.com",
+    roleKey: "team.juanRole",
+    descriptionKey: "team.juanDescription",
+    linkedin: "https://www.linkedin.com/in/juanandr%C3%A9sposadaaleans010101/",
     github: "https://github.com/JPosda48",
   },
   {
     image: andres.src,
     name: "Andrés Felipe",
-    role: "CTO & Fundador",
-    description:
-      "Arquitecto de software especializado en soluciones escalables y seguras.",
+    roleKey: "team.andresRole",
+    descriptionKey: "team.andresDescription",
     linkedin: "https://www.linkedin.com/in/aftr03/",
     github: "https://github.com/AFTR05",
   },
   {
     image: valen.src,
     name: "Valentina",
-    role: "UX/UI Designer & Developer",
-    description:
-      "Diseñadora y desarrolladora apasionada por crear experiencias digitales intuitivas y accesibles.",
+    roleKey: "team.valentinaRole",
+    descriptionKey: "team.valentinaDescription",
     linkedin: "https://www.linkedin.com/in/valenhoyos28",
     github: "https://github.com/valenhoyosescobar04",
   },
@@ -38,26 +36,39 @@ const teamMembers = [
 
 <section class="team">
   <div class="team-container">
-  <span class="team-badge">Nuestro Equipo</span>
+    <span class="team-badge" data-i18n-key="team.badge">Nuestro Equipo</span>
 
-  <h2 class="team-title">
-    El Talento Detrás de la <span>Innovación</span>
-  </h2>
+    <h2 class="team-title">
+      <span data-i18n-key="team.titleLine1">El Talento Detrás de la</span>
+      <span class="highlight" data-i18n-key="team.titleHighlight"
+        >Innovación</span
+      >
+    </h2>
 
-  <p class="team-description">
-    Un equipo multidisciplinario de profesionales apasionados por la tecnología
-    y comprometidos con el éxito de nuestros clientes.
-  </p>
+    <p class="team-description" data-i18n-key="team.description">
+      Un equipo multidisciplinario de profesionales apasionados por la
+      tecnología y comprometidos con el éxito de nuestros clientes.
+    </p>
 
-  <div class="team-grid">
-    {teamMembers.map((member) => <TeamCard {...member} />)}
-  </div>
+    <div class="team-grid">
+      {
+        teamMembers.map((member) => (
+          <TeamCard
+            image={member.image}
+            name={member.name}
+            roleKey={member.roleKey}
+            descriptionKey={member.descriptionKey}
+            linkedin={member.linkedin}
+            github={member.github}
+          />
+        ))
+      }
+    </div>
 
-      <div class="team-decoration">
-  <img src={hexagonIcon.src} class="hex hex-1t" alt="" />
-  <img src={hexagonIcon.src} class="hex hex-2t" alt="" />
-  <img src={hexagonIcon.src} class="hex hex-3t" alt="" />
-
-  </div>
+    <div class="team-decoration">
+      <img src={hexagonIcon.src} class="hex hex-1t" alt="" />
+      <img src={hexagonIcon.src} class="hex hex-2t" alt="" />
+      <img src={hexagonIcon.src} class="hex hex-3t" alt="" />
+    </div>
   </div>
 </section>

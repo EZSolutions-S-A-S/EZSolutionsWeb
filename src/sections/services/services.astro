@@ -11,13 +11,16 @@ import hexagonIcon from '../../assets/icons/hexagon.svg';
 <section class="services">
   <div class="container">
 
-    <span class="services-badge">Nuestros Servicios</span>
+    <span class="services-badge" data-i18n-key="services.badge">
+      Nuestros Servicios
+    </span>
 
     <h2 class="services-title">
-      Soluciones que <span>Impulsan tu Negocio</span> 
+      <span data-i18n-key="services.title">Soluciones que</span>
+      <span class="highlight" data-i18n-key="services.titleHighlight">Impulsan tu Negocio</span>
     </h2>
 
-    <p class="services-description">
+    <p class="services-description" data-i18n-key="services.description">
       Ofrecemos una gama completa de servicios de desarrollo de software diseñados para optimizar y digitalizar tu empresa.
     </p>
 
@@ -28,8 +31,8 @@ import hexagonIcon from '../../assets/icons/hexagon.svg';
           <HexagonBg />
           <img src={codeIcon.src} class="main-icon" alt="Software">
         </div>
-        <h3>Software a la Medida</h3>
-        <p>
+        <h3 data-i18n-key="services.customTitle">Software a la Medida</h3>
+        <p data-i18n-key="services.customText">
           Desarrollamos aplicaciones personalizadas que se adaptan perfectamente a los procesos de tu negocio.
         </p>
         <span class="service-line"></span>
@@ -40,8 +43,8 @@ import hexagonIcon from '../../assets/icons/hexagon.svg';
           <HexagonBg />
           <img src={inventoryIcon.src} class="main-icon" alt="Inventario">
         </div>
-        <h3>Sistemas de Inventario</h3>
-        <p>
+        <h3 data-i18n-key="services.inventoryTitle">Sistemas de Inventario</h3>
+        <p data-i18n-key="services.inventoryText">
           Control total de tu inventario con seguimiento en tiempo real, alertas y reportes detallados.
         </p>
         <span class="service-line"></span>
@@ -52,8 +55,8 @@ import hexagonIcon from '../../assets/icons/hexagon.svg';
           <HexagonBg />
           <img src={salesIcon.src} class="main-icon" alt="Ventas">
         </div>
-        <h3>Sistemas de Ventas</h3>
-        <p>
+        <h3 data-i18n-key="services.salesTitle">Sistemas de Ventas</h3>
+        <p data-i18n-key="services.salesText">
           Punto de venta moderno con facturación, gestión de clientes y análisis de ventas.
         </p>
         <span class="service-line"></span>
@@ -64,8 +67,8 @@ import hexagonIcon from '../../assets/icons/hexagon.svg';
           <HexagonBg />
           <img src={appIcon.src} class="main-icon" alt="Apps">
         </div>
-        <h3>Apps Web y Móviles</h3>
-        <p>
+        <h3 data-i18n-key="services.appsTitle">Apps Web y Móviles</h3>
+        <p data-i18n-key="services.appsText">
           Aplicaciones multiplataforma que funcionan en cualquier dispositivo con experiencia nativa.
         </p>
         <span class="service-line"></span>
@@ -76,15 +79,18 @@ import hexagonIcon from '../../assets/icons/hexagon.svg';
           <HexagonBg />
           <img src={automationIcon.src} class="main-icon" alt="Automatización">
         </div>
-        <h3>Automatización</h3>
-        <p>
+        <h3 data-i18n-key="services.automationTitle">Automatización</h3>
+        <p data-i18n-key="services.automationText">
           Automatizamos procesos repetitivos para aumentar la eficiencia y reducir errores.
         </p>
         <span class="service-line"></span>
       </article>
 
     </div>
+
     <div class="services-decoration">
-  <img src={hexagonIcon.src} class="hex hex-1s" alt="" />
+      <img src={hexagonIcon.src} class="hex hex-1s" alt="" />
+    </div>
+
   </div>
 </section>

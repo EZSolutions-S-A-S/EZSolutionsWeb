@@ -140,7 +140,80 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
 
-    form.submit();
+    // Recopilar datos del formulario
+    const formData = new FormData(form);
+    const data = {
+      name: formData.get('name'),
+      email: formData.get('email'),
+      phone: formData.get('phone'),
+      company: formData.get('company'),
+      project_type: formData.get('project_type'),
+      description: formData.get('description'),
+      budget: formData.get('budget'),
+    };
+
+    // Mostrar pantalla de carga
+    const loadingScreen = document.getElementById('quote-loading');
+    if (loadingScreen) {
+      loadingScreen.classList.add('active');
+    }
+
+    // Enviar email a través de Resend
+    fetch('/api/send-quote', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data),
+    })
+      .then(response => response.json())
+      .then(result => {
+        if (result.success) {
+          // Mostrar pantalla de éxito
+          const successScreen = document.getElementById('quote-success');
+          
+          if (successScreen) {
+            successScreen.classList.add('active');
+          }
+          
+          // Ocultar loading
+          if (loadingScreen) {
+            loadingScreen.classList.remove('active');
+          }
+          
+          // Cerrar modal después de 4 segundos
+          setTimeout(() => {
+            if (successScreen) {
+              successScreen.classList.remove('active');
+            }
+            if (loadingScreen) {
+              loadingScreen.classList.remove('active');
+            }
+            quoteOverlay.classList.remove("active");
+            resetForm();
+          }, 4000);
+        } else {
+          throw new Error(result.error || 'Error al enviar cotización');
+        }
+      })
+      .catch(error => {
+        // Ocultar pantalla de carga
+        if (loadingScreen) {
+          loadingScreen.classList.remove('active');
+        }
+        if (formAlert && formAlertText) {
+          formAlert.classList.add("active");
+          formAlertText.innerHTML = `
+            <span class="form-alert-icon">✗</span>
+            <div class="form-alert-text">
+              <div class="form-alert-title">Error al enviar</div>
+              <div class="form-alert-message">Hubo un problema. Intenta de nuevo.</div>
+            </div>
+          `;
+          formAlert.style.borderColor = '#ef4444';
+          formAlert.style.backgroundColor = '#fef2f2';
+        }
+      });
   });
 
   form.querySelectorAll("input, textarea, select").forEach(field => {

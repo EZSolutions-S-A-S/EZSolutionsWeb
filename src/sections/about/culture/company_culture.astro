@@ -1,62 +1,74 @@
 ---
-import HexagonBg from './hexagon_bg.astro';
-import rocketIcon from '../icons_about/rocket-innovation.svg';
-import teamworkIcon from '../icons_about/teamwork.svg';
-import clientIcon from '../icons_about/client-focus.svg';
-import hexagonIcon from '../../../assets/icons/hexagon.svg';
+import HexagonBg from "./hexagon_bg.astro";
+import rocketIcon from "../icons_about/rocket-innovation.svg";
+import teamworkIcon from "../icons_about/teamwork.svg";
+import clientIcon from "../icons_about/client-focus.svg";
+import hexagonIcon from "../../../assets/icons/hexagon.svg";
 ---
 
 <section class="company-culture">
-
   <div class="container">
-
-    <span class="culture-badge">Cultura Empresarial</span>
+    <span class="culture-badge" data-i18n-key="companyCulture.badge"
+      >Cultura Empresarial</span
+    >
 
     <h2 class="culture-title">
-      Nuestra Forma de <span>Trabajar</span>
+      <span data-i18n-key="companyCulture.titleLine1">Nuestra Forma de</span>
+      <span class="highlight" data-i18n-key="companyCulture.titleHighlight"
+        >Trabajar</span
+      >
     </h2>
 
-    <p class="culture-description">
-      En el corazón de nuestra empresa están los valores que nos guían y la pasión por crear software excepcional.
+    <p class="culture-description" data-i18n-key="companyCulture.description">
+      En el corazón de nuestra empresa están los valores que nos guían y la
+      pasión por crear software excepcional.
     </p>
 
     <div class="culture-values">
-
       <div class="culture-card">
         <div class="culture-icon">
           <HexagonBg />
-          <img class="icon" src={rocketIcon.src} alt="Innovation">
+          <img class="icon" src={rocketIcon.src} alt="Innovation" />
         </div>
-        <h3>Innovación Constante</h3>
-        <p>
-          Siempre exploramos nuevas tecnologías y metodologías para ofrecer las mejores soluciones.
+        <h3 data-i18n-key="companyCulture.innovationTitle">
+          Innovación Constante
+        </h3>
+        <p data-i18n-key="companyCulture.innovationText">
+          Siempre exploramos nuevas tecnologías y metodologías para ofrecer las
+          mejores soluciones.
         </p>
       </div>
 
       <div class="culture-card">
         <div class="culture-icon">
           <HexagonBg />
-          <img class="icon" src={teamworkIcon.src} alt="Teamwork">
+          <img class="icon" src={teamworkIcon.src} alt="Teamwork" />
         </div>
-        <h3>Trabajo Colaborativo</h3>
-        <p>
-          Trabajamos en equipo con nuestros clientes, involucrándolos en cada etapa del desarrollo.
+        <h3 data-i18n-key="companyCulture.teamworkTitle">
+          Trabajo Colaborativo
+        </h3>
+        <p data-i18n-key="companyCulture.teamworkText">
+          Trabajamos en equipo con nuestros clientes, involucrándolos en cada
+          etapa del desarrollo.
         </p>
       </div>
 
       <div class="culture-card">
         <div class="culture-icon">
           <HexagonBg />
-          <img class="icon" src={clientIcon.src} alt="Client Focus">
+          <img class="icon" src={clientIcon.src} alt="Client Focus" />
         </div>
-        <h3>Enfoque en el Cliente</h3>
-        <p>
-          Tu éxito es nuestro éxito. Nos enfocamos en entender y superar tus expectativas.
+        <h3 data-i18n-key="companyCulture.clientFocusTitle">
+          Enfoque en el Cliente
+        </h3>
+        <p data-i18n-key="companyCulture.clientFocusText">
+          Tu éxito es nuestro éxito. Nos enfocamos en entender y superar tus
+          expectativas.
         </p>
       </div>
-
     </div>
-  <div class="about-decoration">
-  <img src={hexagonIcon.src} class="hex hex-1c" alt="" />
+    <div class="about-decoration">
+      <img src={hexagonIcon.src} class="hex hex-1c" alt="" />
+    </div>
   </div>
 </section>

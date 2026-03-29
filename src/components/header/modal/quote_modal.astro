@@ -4,6 +4,26 @@ import CustomSelect from '../../inputs/dropdown_select.astro';
 <div id="quote-overlay" class="quote-overlay">
   <div class="quote-modal" role="dialog" aria-modal="true">
     
+    <!-- Loading Screen -->
+    <div id="quote-loading" class="quote-loading">
+      <div class="quote-loading-content">
+        <div class="quote-spinner"></div>
+        <p class="quote-loading-text" data-i18n-key="quoteForm.sending">Enviando tu cotización...</p>
+      </div>
+    </div>
+
+    <!-- Success Screen -->
+    <div id="quote-success" class="quote-success">
+      <div class="quote-success-content">
+        <div class="quote-success-icon">✓</div>
+        <h2 class="quote-success-title" data-i18n-key="quoteForm.successTitle">¡Cotización Enviada!</h2>
+        <p class="quote-success-message" data-i18n-key="quoteForm.successMessage">Gracias por tu interés. Nos pondremos en contacto muy pronto.</p>
+        <div class="quote-success-footer">
+          <p class="quote-success-close" data-i18n-key="quoteForm.closingModal">Cerrando...</p>
+        </div>
+      </div>
+    </div>
+    
     <div class="quote-modal-header">
 
       <div class="quote-modal-title">
@@ -46,6 +66,13 @@ import CustomSelect from '../../inputs/dropdown_select.astro';
           </div>
 
           <div class="quote-form-group">
+            <label for="quote-phone">
+                <span data-i18n-key="quoteForm.phoneLabel">Teléfono</span> <span class="quote-required" data-i18n-key="quoteForm.required">*</span>
+            </label>
+            <input id="quote-phone" name="phone" type="tel" placeholder="Tu número de teléfono" data-i18n-attr='{"placeholder": "quoteForm.phonePlaceholder"}' required />
+          </div>
+
+          <div class="quote-form-group">
             <label for="quote-company">
                 <span data-i18n-key="quoteForm.companyLabel">Empresa</span> <span class="quote-optional" data-i18n-key="quoteForm.optional">(opcional)</span>
             </label>
@@ -61,12 +88,12 @@ import CustomSelect from '../../inputs/dropdown_select.astro';
               name="project_type" 
               required={true}
               options={[
-                "Software a la medida",
-                "Sistema de inventario",
-                "Sistema de ventas",
-                "Aplicación web",
-                "Aplicación móvil",
-                "Otro"
+                { label: "Software a la medida", i18nKey: "quoteForm.projectTypeOption1" },
+                { label: "Sistema de inventario", i18nKey: "quoteForm.projectTypeOption2" },
+                { label: "Sistema de ventas", i18nKey: "quoteForm.projectTypeOption3" },
+                { label: "Aplicación web", i18nKey: "quoteForm.projectTypeOption4" },
+                { label: "Aplicación móvil", i18nKey: "quoteForm.projectTypeOption5" },
+                { label: "Otro", i18nKey: "quoteForm.projectTypeOption6" }
               ]}
             />
           </div>
@@ -92,6 +119,9 @@ import CustomSelect from '../../inputs/dropdown_select.astro';
           </label>
           <input id="quote-budget" name="budget" type="text" placeholder="Ej: $1.500.000 - $3.000.000 COP" data-i18n-attr='{"placeholder": "quoteForm.budgetPlaceholder"}' />
         </div>
+
+        <!-- Honeypot field: hidden from real users, filled by spam bots -->
+        <input id="quote-website" name="website" type="text" style="display: none; position: absolute; left: -9999px;" tabindex="-1" autocomplete="off" />
 
         <button type="submit" class="quote-submit-btn" data-i18n-key="quoteForm.submitBtn">
           Enviar Solicitud

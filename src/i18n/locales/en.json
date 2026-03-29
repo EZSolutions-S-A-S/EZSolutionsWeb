@@ -7,11 +7,132 @@
     "contacto": "Contact",
     "quote": "Get a Quote"
   },
-  "hero": {
-    "badge": "Custom Software Development",
-    "title": "We Transform Your",
-    "subtitle": "Ideas into Digital Solutions"
+  
+  "home": {
+    "heroBadge": "Custom Software Development",
+    "heroTitleLine1": "We transform your",
+    "heroTitleHighlight": "ideas into solutions",
+    "heroTitleLine2": "digital",
+    "heroDescription": "We create custom software that drives the digitalization of your company, optimizing key processes such as inventory and sales with accessible and intuitive tools.",
+    "heroPrimaryButton": "Start Project",
+    "heroSecondaryButton": "Learn More"
   },
+
+  "stats": {
+    "statProjects": "Projects",
+    "statClients": "Clients",
+    "statYears": "Years"
+},
+
+  "about": {
+    "badge": "About Us",
+    "titleLine1": "Experts in",
+    "titleHighlight": "Custom Software",
+    "title": "Experts in Custom Software",
+    "description": "We are a company dedicated to developing personalized technological solutions that drive the digital transformation of small and medium-sized businesses.",
+    "missionTitle": "Mission",
+    "missionText": "Provide customized technological solutions that promote the digitalization of small businesses, optimizing key processes such as inventory and sales through accessible and intuitive tools focused on their real needs.",
+    "visionTitle": "Vision",
+    "visionText": "To become leaders in custom software development for companies in the manufacturing and commercial sectors in Quindío, promoting digital transformation through innovative, scalable and user-centered solutions.",
+    "valuesTitle": "Our Values",
+    "innovationTitle": "Innovation",
+    "innovationText": "We constantly seek new ways to solve problems.",
+    "commitmentTitle": "Commitment",
+    "commitmentText": "We are dedicated to the success of every project and client.",
+    "transparencyTitle": "Transparency",
+    "transparencyText": "Clear and honest communication at all times.",
+    "qualityTitle": "Quality",
+    "qualityText": "We deliver robust and well-documented software."
+},
+
+  "companyCulture": {
+    "badge": "Company Culture",
+    "titleLine1": "Our Way of",
+    "title": "Our Way of Working",
+    "titleHighlight": "Working",
+    "description": "At the heart of our company are the values that guide us and the passion for creating exceptional software.",
+    "innovationTitle": "Constant Innovation",
+    "innovationText": "We continuously explore new technologies and methodologies to deliver the best solutions.",
+    "teamworkTitle": "Collaborative Work",
+    "teamworkText": "We work as a team with our clients, involving them in every stage of development.",
+    "clientFocusTitle": "Client Focus",
+    "clientFocusText": "Your success is our success. We focus on understanding and exceeding your expectations."
+},
+
+  "team": {
+    "badge": "Our Team",
+    "titleLine1": "The Talent Behind",
+    "title": "The Talent Behind Innovation",
+    "titleHighlight": "Innovation",
+    "description": "A multidisciplinary team of professionals passionate about technology and committed to the success of our clients.",
+    "juanRole": "CEO & Founder",
+    "juanDescription": "Strategic leader with business vision and a focus on technological innovation.",
+    "andresRole": "CTO & Founder",
+    "andresDescription": "Software architect specialized in scalable and secure solutions.",
+    "valentinaRole": "UX/UI Designer & Developer",
+    "valentinaDescription": "Designer and developer passionate about creating intuitive and accessible digital experiences."
+},
+
+  "clients": {
+    "badge": "Clients",
+    "title": "Companies that Trust Us",
+    "titleHighlight": "Trust Us",
+    "description": "We have helped various companies in the manufacturing and commercial sectors digitize their processes and increase productivity.",
+    "company1": "Company 1",
+    "company1Type": "Colchones Posada",
+    "company2": "Company 2",
+    "company2Type": "Commerce",
+    "company3": "Company 3",
+    "company3Type": "Services",
+    "company4": "Company 4",
+    "company4Type": "Textile",
+    "company5": "Company 5",
+    "company5Type": "Logistics",
+    "company6": "Company 6",
+    "company6Type": "Food"
+},
+
+  "services": {
+    "badge": "Our Services",
+    "title": "Solutions that",
+    "titleHighlight": "Boost Your Business",
+    "description": "We offer a complete range of software development services designed to optimize and digitize your company.",
+    "customTitle": "Custom Software",
+    "customText": "We develop customized applications that perfectly adapt to your business processes.",
+    "inventoryTitle": "Inventory Systems",
+    "inventoryText": "Full control of your inventory with real-time tracking, alerts, and detailed reports.",
+    "salesTitle": "Sales Systems",
+    "salesText": "Modern point-of-sale with invoicing, customer management, and sales analytics.",
+    "appsTitle": "Web and Mobile Apps",
+    "appsText": "Cross-platform applications that work on any device with a native experience.",
+    "automationTitle": "Automation",
+    "automationText": "We automate repetitive processes to increase efficiency and reduce errors."
+},
+
+  "technologies": {
+    "badge": "Technology Stack",
+    "title": "Technologies We Master",
+    "description": "We offer a complete range of software development services designed to optimize and digitize your company.",
+    "footer": "And many more technologies adapted to the needs of each project"
+},
+
+  "contact": {
+    "badge": "Contact",
+    "title": "Ready to Start Your Project?",
+    "titleHighlight": "Start Your Project?",
+    "description": "Tell us about your idea and we will help you turn it into reality. We are here to help you!",
+    "locationTitle": "Location",
+    "phoneTitle": "Phone",
+    "emailTitle": "Email",
+    "formName": "Name",
+    "formEmail": "Email",
+    "formMessage": "Message",
+    "formNamePlaceholder": "Your name",
+    "formEmailPlaceholder": "your@email.com",
+    "formMessagePlaceholder": "Tell us about your project",
+    "formButton": "Send Message"
+},
+
   "footer": {
     "description": "We transform ideas into digital solutions. Custom-made software to drive your business forward.",
     "company": "Company",
@@ -29,6 +150,7 @@
     "copyright": "© 2026 EZsolutions S.A.S. All rights reserved.",
     "location": "Quindío, Colombia"
   },
+
   "privacy": {
     "title": "Privacy Policy",
     "section1": "1. Information We Collect",
@@ -58,6 +180,7 @@
     "updated": "Last updated: February 19, 2026",
     "location": "Location: Quindío, Colombia"
   },
+
   "terms": {
     "title": "Terms of Service",
     "section1": "1. Acceptance of Terms",
@@ -94,6 +217,7 @@
     "updated": "Last updated: February 19, 2026",
     "location": "Location: Quindío, Colombia"
   },
+
   "quoteForm": {
     "title": "Get a Quote",
     "subtitle": "Tell us about your project and we'll contact you soon.",
@@ -102,9 +226,12 @@
     "namePlaceholder": "Your name",
     "emailLabel": "Email Address",
     "emailPlaceholder": "you@email.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "Your phone number",
     "companyLabel": "Company",
     "companyPlaceholder": "Your company name",
     "projectTypeLabel": "Project Type",
+    "selectPlaceholder": "Select an option",
     "projectTypeOption1": "Custom Software",
     "projectTypeOption2": "Inventory System",
     "projectTypeOption3": "Sales System",
@@ -116,6 +243,10 @@
     "budgetLabel": "Estimated Budget",
     "budgetPlaceholder": "Ex: $1,500,000 - $3,000,000 COP",
     "submitBtn": "Submit Request",
+    "sending": "Sending your quote...",
+    "successTitle": "Quote Sent!",
+    "successMessage": "Thank you for your interest. We will contact you very soon.",
+    "closingModal": "Closing...",
     "required": "*",
     "optional": "(optional)"
   }

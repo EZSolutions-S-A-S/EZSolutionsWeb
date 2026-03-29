@@ -1,17 +1,36 @@
 ---
 import linkedinIcon from '../../../assets/icons/linkedin.svg';
 import githubIcon from '../../../assets/icons/github.svg';
+import es from '../../../i18n/locales/es.json';
+import en from '../../../i18n/locales/en.json';
 
 interface Props {
   image: string;
   name: string;
-  role: string;
-  description: string;
+  roleKey: string;
+  descriptionKey: string;
   linkedin: string;
   github: string;
 }
 
-const { image, name, role, description, linkedin, github } = Astro.props;
+const { image, name, roleKey, descriptionKey, linkedin, github } = Astro.props;
+
+// Helper function to get translation from nested key
+function getTranslation(key: string, lang: 'es' | 'en'): string {
+  const translations = lang === 'es' ? es : en;
+  const keys = key.split('.');
+  let value: any = translations;
+  
+  for (const k of keys) {
+    value = value?.[k];
+  }
+  
+  return typeof value === 'string' ? value : key;
+}
+
+// Get default Spanish values for server-side rendering
+const roleText = getTranslation(roleKey, 'es');
+const descriptionText = getTranslation(descriptionKey, 'es');
 ---
 
 <article class="team-card" data-team-card>
@@ -19,11 +38,11 @@ const { image, name, role, description, linkedin, github } = Astro.props;
 
   <div class="team-info" data-team-info>
     <h3>{name}</h3>
-    <span>{role}</span>
+    <span data-i18n-key={roleKey}>{roleText}</span>
   </div>
 
   <div class="team-overlay" data-team-overlay>
-    <p>{description}</p>
+    <p data-i18n-key={descriptionKey}>{descriptionText}</p>
 
     <div class="team-links">
       <a href={linkedin} target="_blank" rel="noopener noreferrer">

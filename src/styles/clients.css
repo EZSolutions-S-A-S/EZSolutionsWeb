@@ -44,7 +44,7 @@
   margin-bottom: 16px;
 }
 
-.clients-title span {
+.clients-title .highlight {
   color: #005DAA;
 }
 
@@ -54,6 +54,7 @@
   text-align: center;
   color: #6b7280;
   font-size: 20px;
+  line-height: 1.3;
 }
 
 .clients-grid {

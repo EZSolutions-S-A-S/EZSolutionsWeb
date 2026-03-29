@@ -1,5 +1,3 @@
-
-
 ---
 import hexagonIcon from '../../assets/icons/hexagon.svg';
 import briefcaseIcon from './icons_about/briefcase.svg';
@@ -10,13 +8,14 @@ import briefcaseIcon from './icons_about/briefcase.svg';
     <img src={hexagonIcon.src} alt="hexagon shape" class="clients-shape" />
 
     <div class="clients-header">
-      <span class="clients-badge">Clientes</span>
+      <span class="clients-badge" data-i18n-key="clients.badge">Clientes</span>
 
       <h2 class="clients-title">
-        Empresas que <span>Confían en Nosotros</span>
+        <span data-i18n-key="clients.title">Empresas que</span> 
+        <span class="highlight" data-i18n-key="clients.titleHighlight">Confían en Nosotros</span>
       </h2>
 
-      <p class="clients-description">
+      <p class="clients-description" data-i18n-key="clients.description">
       Hemos ayudado a diversas empresas del sector manufacturero y comercial a digitalizar sus procesos y aumentar su productividad.
       </p>
     </div>
@@ -27,50 +26,49 @@ import briefcaseIcon from './icons_about/briefcase.svg';
         <div class="client-icon">
           <img src={briefcaseIcon.src} alt="company icon">
         </div>
-        <h3>Empresa 1</h3>
-        <p>Manufactura</p>
+        <h3 data-i18n-key="clients.company1">Empresa 1</h3>
+        <p data-i18n-key="clients.company1Type">Colchones Posada</p>
       </div>
 
       <div class="client-card">
         <div class="client-icon">
           <img src={briefcaseIcon.src} alt="company icon">
         </div>
-        <h3>Empresa 2</h3>
-        <p>Comercio</p>
+        <h3 data-i18n-key="clients.company2">Empresa 2</h3>
+        <p data-i18n-key="clients.company2Type">Comercio</p>
       </div>
 
       <div class="client-card">
         <div class="client-icon">
           <img src={briefcaseIcon.src} alt="company icon">
         </div>
-        <h3>Empresa 3</h3>
-        <p>Servicios</p>
+        <h3 data-i18n-key="clients.company3">Empresa 3</h3>
+        <p data-i18n-key="clients.company3Type">Servicios</p>
       </div>
 
       <div class="client-card">
         <div class="client-icon">
           <img src={briefcaseIcon.src} alt="company icon">
         </div>
-        <h3>Empresa 4</h3>
-        <p>Textil</p>
+        <h3 data-i18n-key="clients.company4">Empresa 4</h3>
+        <p data-i18n-key="clients.company4Type">Textil</p>
       </div>
 
       <div class="client-card">
         <div class="client-icon">
           <img src={briefcaseIcon.src} alt="company icon">
         </div>
-        <h3>Empresa 5</h3>
-        <p>Logística</p>
+        <h3 data-i18n-key="clients.company5">Empresa 5</h3>
+        <p data-i18n-key="clients.company5Type">Logística</p>
       </div>
 
       <div class="client-card">
         <div class="client-icon">
           <img src={briefcaseIcon.src} alt="company icon">
         </div>
-        <h3>Empresa 6</h3>
-        <p>Alimentos</p>
+        <h3 data-i18n-key="clients.company6">Empresa 6</h3>
+        <p data-i18n-key="clients.company6Type">Alimentos</p>
       </div>
-
     </div>
 
   </div>

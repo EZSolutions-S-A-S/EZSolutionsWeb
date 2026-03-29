@@ -53,6 +53,9 @@ function updatePageTranslations(lang: Language) {
   // Actualizar todos los elementos con data-i18n-key
   const elements = document.querySelectorAll('[data-i18n-key]');
   elements.forEach(el => {
+    // Skip elements with custom user values (like selected options in dropdowns)
+    if (el.hasAttribute('data-custom-value')) return;
+    
     const key = el.getAttribute('data-i18n-key');
     if (key) {
       el.textContent = getText(key, lang);
@@ -78,11 +81,14 @@ function updatePageTranslations(lang: Language) {
   });
 }
 
-// Inicializar las traducciones al cargar
 if (typeof document !== 'undefined') {
-  document.addEventListener('DOMContentLoaded', () => {
-    // Cargar idioma guardado
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', () => {
+      const savedLang = (localStorage.getItem('lang') || 'es') as Language;
+      updatePageTranslations(savedLang);
+    });
+  } else {
     const savedLang = (localStorage.getItem('lang') || 'es') as Language;
-    setLanguage(savedLang);
-  });
+    updatePageTranslations(savedLang);
+  }
 }

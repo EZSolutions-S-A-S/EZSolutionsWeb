@@ -8,14 +8,18 @@ import hexagonIcon from '../../assets/icons/hexagon.svg';
 <section class="contact-section">
   <div class="contact-container">
 
-    <div class="contact-badge">Contacto</div>
+    <div class="contact-badge" data-i18n-key="contact.badge">
+      Contacto
+    </div>
 
     <h2 class="contact-title">
-       ¿Listo para <span class="text-primary">Empezar tu Proyecto? </span> 
+      <span data-i18n-key="contact.title">¿Listo para</span>
+      <span class="text-primary" data-i18n-key="contact.titleHighlight">Empezar tu Proyecto?</span>
     </h2>
 
-    <p class="contact-description">
-Cuéntanos sobre tu idea y te ayudaremos a convertirla en realidad. ¡Estamos aquí para ayudarte!    </p>
+    <p class="contact-description" data-i18n-key="contact.description">
+      Cuéntanos sobre tu idea y te ayudaremos a convertirla en realidad. ¡Estamos aquí para ayudarte!
+    </p>
 
     <div class="contact-info-grid">
 
@@ -24,7 +28,7 @@ Cuéntanos sobre tu idea y te ayudaremos a convertirla en realidad. ¡Estamos aq
           <img src={locationIcon.src} alt="Location icon" />
         </div>
         <div class="contact-card-content">
-          <h4>Ubicación</h4>
+          <h4 data-i18n-key="contact.locationTitle">Ubicación</h4>
           <p>Quindío, Colombia</p>
         </div>
       </div>
@@ -34,8 +38,8 @@ Cuéntanos sobre tu idea y te ayudaremos a convertirla en realidad. ¡Estamos aq
           <img src={phoneIcon.src} alt="Phone icon" />
         </div>
         <div class="contact-card-content">
-          <h4>Teléfono</h4>
-          <p>+57 123 456 7890</p>
+          <h4 data-i18n-key="contact.phoneTitle">Teléfono</h4>
+          <p>+57 316 406 6163</p>
         </div>
       </div>
 
@@ -44,8 +48,8 @@ Cuéntanos sobre tu idea y te ayudaremos a convertirla en realidad. ¡Estamos aq
           <img src={emailIcon.src} alt="Email icon" />
         </div>
         <div class="contact-card-content">
-          <h4>Email</h4>
-          <p>info@ezsolutions.co</p>
+          <h4 data-i18n-key="contact.emailTitle">Email</h4>
+          <p>ezsolutionssas@gmail.com</p>
         </div>
       </div>
 
@@ -56,22 +60,39 @@ Cuéntanos sobre tu idea y te ayudaremos a convertirla en realidad. ¡Estamos aq
 
         <div class="form-row">
           <div class="form-group">
-            <label for="name">Nombre</label>
-            <input id="name" name="name" type="text" placeholder="Tu nombre" />
+            <label for="name" data-i18n-key="contact.formName">Nombre</label>
+            <input 
+              id="name" 
+              name="name" 
+              type="text" 
+              placeholder="Tu nombre"
+              data-i18n-attr='{"placeholder":"contact.formNamePlaceholder"}'
+            />
           </div>
 
           <div class="form-group">
-            <label for="email">Email</label>
-            <input id="email" name="email" type="email" placeholder="tu@email.com" />
+            <label for="email" data-i18n-key="contact.formEmail">Email</label>
+            <input 
+              id="email" 
+              name="email" 
+              type="email" 
+              placeholder="tu@email.com"
+              data-i18n-attr='{"placeholder":"contact.formEmailPlaceholder"}'
+            />
           </div>
         </div>
 
         <div class="form-group">
-          <label for="message">Mensaje</label>
-          <textarea id="message" name="message" placeholder="Cuéntanos sobre tu proyecto"></textarea>
+          <label for="message" data-i18n-key="contact.formMessage">Mensaje</label>
+          <textarea 
+            id="message" 
+            name="message" 
+            placeholder="Cuéntanos sobre tu proyecto"
+            data-i18n-attr='{"placeholder":"contact.formMessagePlaceholder"}'
+          ></textarea>
         </div>
 
-        <button type="submit" class="submit-button">
+        <button type="submit" class="submit-button" data-i18n-key="contact.formButton">
           Enviar Mensaje
         </button>
 
