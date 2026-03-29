@@ -174,8 +174,8 @@ export const POST: APIRoute = async ({ request }) => {
       );
     }
 
-    const companyEmail = import.meta.env.RESEND_QUOTE_EMAIL || 'ezsolutionssas@example.com';
-    const senderEmail = import.meta.env.RESEND_FROM_EMAIL || 'contacto@ezsolutionssas.online';
+    const companyEmail = process.env.RESEND_QUOTE_EMAIL || 'ezsolutionssas@example.com';
+    const senderEmail = process.env.RESEND_FROM_EMAIL || 'contacto@ezsolutionssas.online';
 
     // Escape all user inputs to prevent HTML injection
     const escapedName = escapeHtml(data.name);
@@ -280,7 +280,7 @@ export const POST: APIRoute = async ({ request }) => {
     `;
 
     // Initialize Resend client here (at runtime in server function) to avoid exposing API key in bundle
-    const resend = new Resend(import.meta.env.RESEND_API_KEY);
+    const resend = new Resend(process.env.RESEND_API_KEY);
     const response = await resend.emails.send({
       from: senderEmail,
       to: companyEmail,
