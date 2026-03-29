@@ -53,6 +53,9 @@ function updatePageTranslations(lang: Language) {
   // Actualizar todos los elementos con data-i18n-key
   const elements = document.querySelectorAll('[data-i18n-key]');
   elements.forEach(el => {
+    // Skip elements with custom user values (like selected options in dropdowns)
+    if (el.hasAttribute('data-custom-value')) return;
+    
     const key = el.getAttribute('data-i18n-key');
     if (key) {
       el.textContent = getText(key, lang);

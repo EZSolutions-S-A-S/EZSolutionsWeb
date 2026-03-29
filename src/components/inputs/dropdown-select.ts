@@ -47,6 +47,9 @@ export function setupCustomSelects() {
         if (triggerText) {
           triggerText.textContent = option.textContent;
           triggerText.style.color = '#111827';
+          // Mark as custom value so i18n doesn't overwrite it
+          triggerText.setAttribute('data-custom-value', 'true');
+          triggerText.removeAttribute('data-i18n-key');
         }
 
         // Update hidden select value
