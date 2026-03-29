@@ -226,9 +226,12 @@
     "namePlaceholder": "Tu nombre",
     "emailLabel": "Correo electrónico",
     "emailPlaceholder": "tu@email.com",
+    "phoneLabel": "Teléfono",
+    "phonePlaceholder": "Tu número de teléfono",
     "companyLabel": "Empresa",
     "companyPlaceholder": "Nombre de tu empresa",
     "projectTypeLabel": "Tipo de proyecto",
+    "selectPlaceholder": "Selecciona una opción",
     "projectTypeOption1": "Software a la medida",
     "projectTypeOption2": "Sistema de inventario",
     "projectTypeOption3": "Sistema de ventas",
@@ -240,6 +243,10 @@
     "budgetLabel": "Presupuesto estimado",
     "budgetPlaceholder": "Ej: $1.500.000 - $3.000.000 COP",
     "submitBtn": "Enviar Solicitud",
+    "sending": "Enviando tu cotización...",
+    "successTitle": "¡Cotización Enviada!",
+    "successMessage": "Gracias por tu interés. Nos pondremos en contacto muy pronto.",
+    "closingModal": "Cerrando...",
     "required": "*",
     "optional": "(opcional)"
   }

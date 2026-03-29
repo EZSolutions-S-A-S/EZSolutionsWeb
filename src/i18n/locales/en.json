@@ -226,9 +226,12 @@
     "namePlaceholder": "Your name",
     "emailLabel": "Email Address",
     "emailPlaceholder": "you@email.com",
+    "phoneLabel": "Phone",
+    "phonePlaceholder": "Your phone number",
     "companyLabel": "Company",
     "companyPlaceholder": "Your company name",
     "projectTypeLabel": "Project Type",
+    "selectPlaceholder": "Select an option",
     "projectTypeOption1": "Custom Software",
     "projectTypeOption2": "Inventory System",
     "projectTypeOption3": "Sales System",
@@ -240,6 +243,10 @@
     "budgetLabel": "Estimated Budget",
     "budgetPlaceholder": "Ex: $1,500,000 - $3,000,000 COP",
     "submitBtn": "Submit Request",
+    "sending": "Sending your quote...",
+    "successTitle": "Quote Sent!",
+    "successMessage": "Thank you for your interest. We will contact you very soon.",
+    "closingModal": "Closing...",
     "required": "*",
     "optional": "(optional)"
   }
