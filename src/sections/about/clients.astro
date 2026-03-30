@@ -1,6 +1,7 @@
 ---
 import hexagonIcon from '../../assets/icons/hexagon.svg';
 import briefcaseIcon from './icons_about/briefcase.svg';
+import { CLIENTS } from '../../data/clients';
 ---
 <section class="clients-section">
   <div class="clients-container">
@@ -21,54 +22,15 @@ import briefcaseIcon from './icons_about/briefcase.svg';
     </div>
 
     <div class="clients-grid">
-
-      <div class="client-card">
-        <div class="client-icon">
-          <img src={briefcaseIcon.src} alt="company icon">
+      {CLIENTS.map((client) => (
+        <div class="client-card">
+          <div class="client-icon">
+            <img src={briefcaseIcon.src} alt="company icon">
+          </div>
+          <h3 data-i18n-key={client.nameKey}>{client.nameFallback}</h3>
+          <p data-i18n-key={client.typeKey}>{client.typeFallback}</p>
         </div>
-        <h3 data-i18n-key="clients.company1">Empresa 1</h3>
-        <p data-i18n-key="clients.company1Type">Colchones Posada</p>
-      </div>
-
-      <div class="client-card">
-        <div class="client-icon">
-          <img src={briefcaseIcon.src} alt="company icon">
-        </div>
-        <h3 data-i18n-key="clients.company2">Empresa 2</h3>
-        <p data-i18n-key="clients.company2Type">Comercio</p>
-      </div>
-
-      <div class="client-card">
-        <div class="client-icon">
-          <img src={briefcaseIcon.src} alt="company icon">
-        </div>
-        <h3 data-i18n-key="clients.company3">Empresa 3</h3>
-        <p data-i18n-key="clients.company3Type">Servicios</p>
-      </div>
-
-      <div class="client-card">
-        <div class="client-icon">
-          <img src={briefcaseIcon.src} alt="company icon">
-        </div>
-        <h3 data-i18n-key="clients.company4">Empresa 4</h3>
-        <p data-i18n-key="clients.company4Type">Textil</p>
-      </div>
-
-      <div class="client-card">
-        <div class="client-icon">
-          <img src={briefcaseIcon.src} alt="company icon">
-        </div>
-        <h3 data-i18n-key="clients.company5">Empresa 5</h3>
-        <p data-i18n-key="clients.company5Type">Logística</p>
-      </div>
-
-      <div class="client-card">
-        <div class="client-icon">
-          <img src={briefcaseIcon.src} alt="company icon">
-        </div>
-        <h3 data-i18n-key="clients.company6">Empresa 6</h3>
-        <p data-i18n-key="clients.company6Type">Alimentos</p>
-      </div>
+      ))}
     </div>
 
   </div>
